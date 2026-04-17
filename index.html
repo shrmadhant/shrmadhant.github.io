@@ -3,45 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercer | Dev & Security</title>
+    <title>Mercer | Hub de Conteúdo</title>
+    <link rel="stylesheet" href="css/global.css">
     <style>
-        body {
-            background-color: #0d1117;
-            color: #c9d1d9;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            border: 1px solid #30363d;
-            padding: 2rem;
-            border-radius: 8px;
-            background: #161b22;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-        h1 { color: #58a6ff; margin-bottom: 0.5rem; }
-        p { font-size: 1.1rem; color: #8b949e; }
-        .status {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            background: #238636;
-            color: white;
-            font-size: 0.8rem;
+        body { background: #0d1117; color: #c9d1d9; font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
+        .profile-container { width: 100%; max-width: 400px; text-align: center; }
+        .link-card { 
+            display: block; 
+            background: #161b22; 
+            border: 1px solid #30363d; 
+            color: #58a6ff; 
+            padding: 15px; 
+            margin-bottom: 12px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            transition: 0.3s;
             font-weight: bold;
         }
+        .link-card:hover { background: #21262d; border-color: #8b949e; transform: translateY(-2px); }
+        h1 { font-size: 1.5rem; margin-bottom: 30px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Vinicius Mercer</h1>
-        <p>Sistemas, Segurança e Automação.</p>
-        <div class="status">ONLINE</div>
+    <div class="profile-container">
+        <h1>Materiais e Projetos</h1>
+        
+        <a href="/agente-transito-camboriu-2026" class="link-card">
+            Agente de Trânsito - Camboriú 2026 (Questões)
+        </a>
+
+        <a href="https://github.com/shrmadhant" class="link-card">GitHub / Hardening-Lab</a>
     </div>
 </body>
 </html>

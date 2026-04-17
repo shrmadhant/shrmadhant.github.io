@@ -1,0 +1,20 @@
+# Logs
+*.log
+npm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDEs/Editors
+.vscode/
+.idea/
+
+# Security (Nunca suba chaves ou variáveis de ambiente)
+.env
+*.pem
+*.key
+secrets.json
+
+# Dependencies (Caso use no futuro)
+node_modules/
