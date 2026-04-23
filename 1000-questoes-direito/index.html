@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercer Questões | Hub de Treinamento</title>
+    
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    
+    <style>
+        :root {
+            --bg: #030712; /* Fundo ultra-dark */
+            --card-bg: #111827; /* Card ligeiramente mais claro */
+            --primary: #3b82f6; /* Azul Tico/Moderno */
+            --text: #f9fafb;
+            --text-dim: #9ca3af;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Efeito de luz de fundo (Glow) */
+        .glow {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(3, 7, 18, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            padding: 60px 20px 40px;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 10px;
+            background: linear-gradient(to bottom, #fff 0%, #9ca3af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        /* Botão Principal Estilo Tico */
+        .hero-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 50px; /* Redondo como o deles */
+            font-weight: 700;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+        }
+
+        /* Grid de Cards */
+        .links-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 20px; /* Bordas bem arredondadas */
+            text-decoration: none;
+            color: inherit;
+            backdrop-filter: blur(10px); /* Efeito vidro */
+            transition: all 0.2s ease;
+        }
+
+        .link-card:hover {
+            border-color: var(--primary);
+            background: rgba(31, 41, 55, 0.8);
+            transform: scale(1.01);
+        }
+
+        .card-img {
+            width: 54px;
+            height: 54px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin-right: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .card-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .card-info p {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 40px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 480px) {
+            header h1 { font-size: 2.2rem; }
+            .container { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow"></div>
+
+    <header>
+        <h1>MERCER</h1>
+        <p>Sistemas de treinamento tático e questões comentadas.</p>
+    </header>
+
+    <div class="container">
+        
+        <a href="/agente-transito-camboriu-2026" class="hero-cta">
+            EDITAL ABERTO: CAMBORIÚ 2026
+        </a>
+
+        <div class="links-grid">
+            
+            <a href="/agente-transito-camboriu-2026" class="link-card">
+                <img src="/assets/camboriu-thumb.png" class="card-img" alt="Camboriú">
+                <div class="card-info">
+                    <h3>Agente de Trânsito</h3>
+                    <p>100 Questões Inéditas IDECAN</p>
+                </div>
+            </a>
+
+            <a href="#" class="link-card">
+                <img src="/assets/pmpr-thumb.png" class="card-img" alt="PMPR">
+                <div class="card-info">
+                    <h3>PMPR 2026</h3>
+                    <p>Simulados de Direito Penal</p>
+                </div>
+            </a>
+
+            <a href="https://github.com/shrmadhant" class="link-card">
+                <img src="/assets/github-thumb.png" class="card-img" alt="GitHub">
+                <div class="card-info">
+                    <h3>Hardening Lab</h3>
+                    <p>Repositório de Cibersegurança</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Mercer Questões. Crafted for performance.
+    </footer>
+
+</body>
+</html>
