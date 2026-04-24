@@ -146,10 +146,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         footer {
-            margin-top: auto;
-            padding: 40px;
-            color: var(--text-dim);
-            font-size: 0.8rem;
+            width: 100%;
+            text-align: center; /* Centraliza o texto */
+            padding: 40px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.875rem;
+            color: #6b7280;
+            clear: both; /* Garante que ele fique abaixo de tudo */
+        }
+
+        footer a {
+            color: #3b82f6;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         /* Mobile Adjustments */
