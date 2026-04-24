@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos Legais | Mercer</title>
+    <meta name="description" content="Central de Transparência e Termos Legais.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --color-primary: #00e5ff;
+            --color-primary-dark: #00b8d4;
+        }
+        .dark {
+            --bg-background: #0a0a0f;
+            --bg-card: #111118;
+            --bg-muted: #1a1a24;
+            --text-foreground: #f0f0f8;
+            --text-muted-foreground: #888899;
+            --border-color: #2a2a3a;
+        }
+        :root:not(.dark) {
+            --bg-background: #f8f8fc;
+            --bg-card: #ffffff;
+            --bg-muted: #f0f0f8;
+            --text-foreground: #0a0a1a;
+            --text-muted-foreground: #666677;
+            --border-color: #e0e0ee;
+        }
+
+        body {
+            background-color: var(--bg-background);
+            color: var(--text-foreground);
+            font-family: 'Inter', system-ui, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .neu-flat {
+            box-shadow: 4px 4px 14px rgba(0,0,0,0.45), -2px -2px 8px rgba(255,255,255,0.03);
+        }
+
+        .border-custom { border-color: var(--border-color); }
+        .bg-card { background-color: var(--bg-card); }
+        .text-foreground { color: var(--text-foreground); }
+        .text-muted-fg { color: var(--text-muted-foreground); }
+        
+        ::selection { background: rgba(0,229,255,0.25); }
+
+        /* Estilização de âncoras para rolagem suave */
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    </style>
+
+    <script>
+        // Sincroniza o tema com o localStorage definido no index.html
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved === 'light') document.documentElement.classList.remove('dark');
+            else if (saved === 'dark' || prefersDark) document.documentElement.classList.add('dark');
+        })();
+    </script>
+</head>
+<body class="relative overflow-x-hidden min-h-screen flex flex-col">
+
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-[-10%] right-[-5%] w-[35%] h-[40%] rounded-full opacity-[0.07]"
+             style="background: var(--color-primary); filter: blur(120px);"></div>
+        <div class="absolute bottom-[-10%] left-[10%] w-[40%] h-[35%] rounded-full opacity-[0.06]"
+             style="background: var(--color-primary-dark); filter: blur(140px);"></div>
+    </div>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 neu-flat backdrop-blur-md border-b border-custom"
+         style="background: color-mix(in srgb, var(--bg-card) 90%, transparent);">
+        <div class="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+            <a href="/index.html" class="text-xl font-black tracking-tight text-foreground hover:text-cyan-400 transition-colors">
+                MERCER | Concursos Policiais
+            </a>
+            <a href="/index.html" class="text-sm font-medium text-muted-fg hover:text-foreground transition-colors flex items-center gap-2">
+                <span>&larr;</span> Voltar
+            </a>
+        </div>
+    </nav>
+
+    <main class="relative z-10 flex-grow px-6 pt-32 pb-12">
+        <div class="mx-auto max-w-4xl">
+            
+            <div class="bg-card neu-flat border border-custom rounded-3xl p-8 sm:p-12">
+                
+                <header class="mb-10 border-b border-custom pb-8">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
+                        Central de Transparência
+                    </h1>
+                    <p class="text-lg text-muted-fg">
+                        Abaixo encontram-se todos os termos que regem a utilização da plataforma e dos materiais Mercer.
+                    </p>
+                </header>
+
+                <nav class="flex flex-wrap gap-3 mb-12">
+                    <a href="#privacidade" class="rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide border border-custom transition-all hover:border-cyan-400 hover:text-cyan-400" style="background: var(--bg-background);">
+                        Política de Privacidade
+                    </a>
+                    <a href="#termos" class="rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide border border-custom transition-all hover:border-cyan-400 hover:text-cyan-400" style="background: var(--bg-background);">
+                        Termos de Uso
+                    </a>
+                    <a href="#licenca" class="rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide border border-custom transition-all hover:border-cyan-400 hover:text-cyan-400" style="background: var(--bg-background);">
+                        Licença de Conteúdo
+                    </a>
+                </nav>
+
+                <div class="space-y-12">
+                    <section id="privacidade">
+                        <h2 class="text-2xl font-bold text-foreground mb-6 border-l-4 pl-4" style="border-color: var(--color-primary);">
+                            1. Política de Privacidade
+                        </h2>
+                        <p class="text-muted-fg leading-relaxed mb-6">A sua privacidade é fundamental. Esta seção explica como tratamos os seus dados no site <a href="https://www.mercerquestoes.com" class="text-cyan-400 hover:underline font-medium">mercerquestoes.com</a>.</p>
+                        
+                        <div class="space-y-6 pl-4 sm:pl-5 border-l border-custom">
+                            <div>
+                                <h3 class="text-base font-bold text-foreground mb-2">1.1 Coleta de Informações</h3>
+                                <p class="text-muted-fg text-sm leading-relaxed">Solicitamos informações pessoais apenas quando realmente precisamos delas para fornecer o serviço solicitado (como o envio de amostras via e-mail). Fazemo-lo por meios justos e legais, com o seu consentimento explícito.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-foreground mb-2">1.2 Cookies e Rastreio</h3>
+                                <p class="text-muted-fg text-sm leading-relaxed">Utilizamos cookies do Google Ads, Google Tag Manager e Meta Pixel para analisar o comportamento do utilizador e exibir anúncios relevantes. Os dados são processados de forma anônima para fins estatísticos.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-foreground mb-2">1.3 Compartilhamento de Dados</h3>
+                                <p class="text-muted-fg text-sm leading-relaxed">Não compartilhamos informações de identificação pessoal publicamente, exceto quando exigido por lei ou para processamento de pagamentos via <strong class="text-foreground">Kiwify</strong>.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-foreground mb-2">1.4 Contato</h3>
+                                <p class="text-muted-fg text-sm leading-relaxed">Dúvidas sobre o tratamento de dados? Contate-nos em: <strong class="text-foreground">mercerquestoes@gmail.com</strong>.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="termos">
+                        <h2 class="text-2xl font-bold text-foreground mb-6 border-l-4 pl-4" style="border-color: var(--color-primary);">
+                            2. Termos de Uso
+                        </h2>
+                        
+                        <div class="space-y-6 pl-4 sm:pl-5 border-l border-custom">
+                            <div>
+                                <h3 class="text-base font-bold text-foreground mb-2">2.1 Aceitação</h3>
+                                <p class="text-muted-fg text-sm leading-relaxed">Ao acessar o ecossistema <strong class="text-foreground">Mercer | Concursos Policiais</strong>, você concorda em cumprir estes termos e todas as leis aplicáveis.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-foreground mb-2">2.2 Isenção de Responsabilidade</h3>
+                                <p class="text-muted-fg text-sm leading-relaxed">O material é fornecido "como está". Não oferecemos garantias implícitas de aprovação. O sucesso em concursos públicos depende exclusivamente do esforço, dedicação e desempenho individual do candidato.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-foreground mb-2">2.3 Limitações</h3>
+                                <p class="text-muted-fg text-sm leading-relaxed">Não nos responsabilizamos por danos decorrentes do uso ou incapacidade de usar os materiais, incluindo perda de dados ou lucros cessantes.</p>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-bold text-foreground mb-2">2.4 Direito de Arrependimento</h3>
+                                <p class="text-muted-fg text-sm leading-relaxed">Para produtos digitais (PDF/Áudio), respeitamos a legislação vigente. Contudo, o acesso integral ao conteúdo configura a prestação efetiva do serviço.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="licenca">
+                        <h2 class="text-2xl font-bold text-foreground mb-6 border-l-4 pl-4" style="border-color: var(--color-primary);">
+                            3. Licença de Conteúdo
+                        </h2>
+                        <p class="text-muted-fg leading-relaxed mb-6">Todos os cadernos de questões inéditas e simulados Mercer estão protegidos por direitos de autor.</p>
+                        
+                        <div class="rounded-2xl p-6 mb-6 font-mono text-sm leading-relaxed border"
+                             style="background: rgba(0,229,255,0.05); border-color: rgba(0,229,255,0.2); color: var(--color-primary);">
+                            <span class="block font-bold mb-2 text-white">LICENÇA: USO PESSOAL E INTRANSFERÍVEL.</span>
+                            PROIBIDA A REDISTRIBUIÇÃO, VENDA OU COMPARTILHAMENTO EM GRUPOS.<br>
+                            SISTEMA DE RASTREIO DE IP E WATERMARK ATIVO.
+                        </div>
+
+                        <p class="text-muted-fg text-sm leading-relaxed">Ao adquirir o material, você recebe uma licença limitada para estudo pessoal. A pirataria é crime. A reprodução total ou parcial para fins comerciais ou compartilhamento público resultará em medidas judiciais imediatas, conforme a Lei de Direitos Autorais.</p>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="neu-flat py-8 px-6 mt-auto border-t border-custom bg-card">
+        <div class="mx-auto max-w-4xl flex flex-col md:flex-row items-center justify-between gap-6">
+            <p class="text-sm text-muted-fg font-medium">© 2026 Mercer | Concursos Policiais.</p>
+            <div class="flex items-center gap-6 flex-wrap justify-center">
+                <a href="#privacidade" class="text-sm text-muted-fg hover:text-cyan-400 transition-colors">Privacidade</a>
+                <a href="#termos" class="text-sm text-muted-fg hover:text-cyan-400 transition-colors">Termos</a>
+                <a href="#licenca" class="text-sm text-muted-fg hover:text-cyan-400 transition-colors">Licença</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

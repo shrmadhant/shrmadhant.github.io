@@ -115,7 +115,7 @@
         <div class="hidden md:flex items-center gap-8">
           <a href="index.html" class="text-sm font-medium text-muted-fg hover:text-foreground transition-colors">Home</a>
           <a href="index.html#features" class="text-sm font-medium text-muted-fg hover:text-foreground transition-colors">Features</a>
-          <a href="catalogo.html" class="text-sm font-medium transition-colors" style="color: var(--color-primary);">Catálogo</a>
+          <a href="/catalogo/index.html" class="text-sm font-medium transition-colors" style="color: var(--color-primary);">Catálogo</a>
           <a href="index.html#faq" class="text-sm font-medium text-muted-fg hover:text-foreground transition-colors">FAQ</a>
           <button id="theme-toggle" type="button"
                   class="relative rounded-full p-2 text-muted-fg hover:text-foreground transition-colors hover:bg-white/5"
@@ -210,18 +210,18 @@
           <!-- Adicione um chip por categoria. O valor de data-filter deve bater com data-category nos cards -->
           <button class="filter-chip rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wide border transition-all"
                   style="border-color: var(--border-color); background: var(--bg-card);"
-                  data-filter="categoria-a">
-            Categoria A
+                  data-filter="EDITAL_PUBLICADO">
+            Edital Publicado
           </button>
           <button class="filter-chip rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wide border transition-all"
                   style="border-color: var(--border-color); background: var(--bg-card);"
-                  data-filter="categoria-b">
-            Categoria B
+                  data-filter="EM_BREVE">
+            Edital Em Breve
           </button>
           <button class="filter-chip rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wide border transition-all"
                   style="border-color: var(--border-color); background: var(--bg-card);"
-                  data-filter="categoria-c">
-            Categoria C
+                  data-filter="DIVERSOS">
+            Diversos
           </button>
         </div>
 
@@ -257,32 +257,32 @@
           <!-- PRODUTO 1 -->
           <div class="product-card group rounded-3xl overflow-hidden neu-flat transition-transform hover:scale-[1.02]"
                style="background: var(--bg-card);"
-               data-category="categoria-a"
+               data-category="EDITAL_PUBLICADO"
                data-name="nome do produto 1">
             <div class="relative w-full aspect-[4/3] overflow-hidden"
                  style="background: linear-gradient(135deg, rgba(0,229,255,0.12), rgba(0,184,212,0.05));">
-              <!-- <img src="sua-imagem.jpg" class="w-full h-full object-cover" alt="Produto 1"> -->
+              <img src="/assets/catalogo/catalogo_camboriu_thumb.png" class="w-full h-full object-cover" alt="Camboriú">
               <div class="w-full h-full flex items-center justify-center">
                 <span class="text-5xl opacity-25">🖼</span>
               </div>
               <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wide rounded-full px-3 py-1"
                     style="background: rgba(0,229,255,0.15); color: var(--color-primary); border: 1px solid rgba(0,229,255,0.2);">
-                Categoria A
+                EDITAL PUBLICADO
               </span>
             </div>
             <div class="p-6">
               <h3 class="text-lg font-bold text-foreground mb-1 group-hover:text-cyan-400 transition-colors">
-                Nome do Produto 1
+                Agente de Trânsito Camboriú
               </h3>
               <p class="text-muted-fg text-sm leading-relaxed mb-5">
-                Descrição objetiva. O que o produto faz e para quem é indicado.
+                100 Questões Objetivas Originais e Comentadas no Padrão da Banca IDECAN
               </p>
               <div class="flex items-center justify-between">
                 <div>
-                  <span class="text-xs text-muted-fg line-through mr-1">R$ 199</span>
-                  <span class="text-xl font-extrabold text-foreground">R$ 97</span>
+                  <span class="text-xs text-muted-fg line-through mr-1">R$ 79,90</span>
+                  <span class="text-xl font-extrabold text-foreground">R$ 49,90</span>
                 </div>
-                <a href="#"
+                <a href="/catalogo/agente-transito-camboriu-2026/"
                    class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold text-black transition-all hover:shadow-lg hover:-translate-y-0.5"
                    style="background: var(--color-primary);">
                   Comprar
@@ -504,10 +504,10 @@
       <div class="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6">
         <p class="text-sm text-muted-fg">© 2026 MERCER | Concursos Policiais.</p>
         <div class="flex items-center gap-6 flex-wrap justify-center">
-          <a href="#" class="text-sm text-muted-fg hover:text-foreground transition-colors">Privacidade</a>
-          <a href="#" class="text-sm text-muted-fg hover:text-foreground transition-colors">Termos</a>
-          <a href="#" class="text-sm text-muted-fg hover:text-foreground transition-colors">Licença</a>
-          <a href="index.html" class="text-sm text-muted-fg hover:text-foreground transition-colors">← Voltar para home</a>
+          <a href="/legal.html#privacidade" class="text-sm text-muted-fg hover:text-foreground transition-colors">Privacidade</a>
+          <a href="/legal.html#termos" class="text-sm text-muted-fg hover:text-foreground transition-colors">Termos</a>
+          <a href="/legal.html#licenca" class="text-sm text-muted-fg hover:text-foreground transition-colors">Licença</a>
+          <a href="/index.html" class="text-sm text-muted-fg hover:text-foreground transition-colors">← Voltar para home</a>
         </div>
       </div>
     </footer>
