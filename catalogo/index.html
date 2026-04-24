@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo — SEUAPP</title>
+  <meta name="description" content="Catálogo completo de produtos disponíveis." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primary: #00e5ff;
+      --color-primary-dark: #00b8d4;
+    }
+    .dark {
+      --bg-background: #0a0a0f;
+      --bg-card: #111118;
+      --bg-muted: #1a1a24;
+      --text-foreground: #f0f0f8;
+      --text-muted-foreground: #888899;
+      --border-color: #2a2a3a;
+    }
+    :root:not(.dark) {
+      --bg-background: #f8f8fc;
+      --bg-card: #ffffff;
+      --bg-muted: #f0f0f8;
+      --text-foreground: #0a0a1a;
+      --text-muted-foreground: #666677;
+      --border-color: #e0e0ee;
+    }
+
+    body {
+      background-color: var(--bg-background);
+      color: var(--text-foreground);
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .neu-flat {
+      box-shadow: 4px 4px 14px rgba(0,0,0,0.45), -2px -2px 8px rgba(255,255,255,0.03);
+    }
+    .neu-pressed {
+      box-shadow: inset 2px 2px 6px rgba(0,0,0,0.4), inset -1px -1px 4px rgba(255,255,255,0.03);
+    }
+
+    .bg-background  { background-color: var(--bg-background); }
+    .bg-card        { background-color: var(--bg-card); }
+    .text-foreground{ color: var(--text-foreground); }
+    .text-muted-fg  { color: var(--text-muted-foreground); }
+
+    /* Chip de filtro ativo */
+    .filter-chip { cursor: pointer; transition: all 0.2s; }
+    .filter-chip.active {
+      background: var(--color-primary) !important;
+      color: #000 !important;
+      border-color: var(--color-primary) !important;
+    }
+
+    /* Grid de produtos */
+    #product-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.5rem;
+    }
+    @media (min-width: 640px)  { #product-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { #product-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Ocultar cards filtrados */
+    .product-card[data-hidden="true"] { display: none; }
+
+    /* Theme toggle */
+    html.dark  .icon-sun  { display: none; }
+    html.dark  .icon-moon { display: block; }
+    html:not(.dark) .icon-sun  { display: block; }
+    html:not(.dark) .icon-moon { display: none; }
+
+    /* Mobile menu */
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: block; }
+
+    ::selection { background: rgba(0,229,255,0.25); }
+  </style>
+</head>
+
+<body class="bg-background text-foreground overflow-x-hidden">
+
+  <!-- Blobs ambiente -->
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <div class="absolute top-[-10%] right-[-5%] w-[35%] h-[40%] rounded-full opacity-[0.07]"
+         style="background: var(--color-primary); filter: blur(120px);"></div>
+    <div class="absolute bottom-[-10%] left-[10%] w-[40%] h-[35%] rounded-full opacity-[0.06]"
+         style="background: var(--color-primary-dark); filter: blur(140px);"></div>
+  </div>
+
+  <div class="relative z-10">
+
+    <!-- =============================================
+         NAVBAR
+         ============================================= -->
+    <nav class="fixed top-0 left-0 right-0 z-50 neu-flat backdrop-blur-md border-b"
+         style="background: color-mix(in srgb, var(--bg-card) 90%, transparent); border-color: var(--border-color);">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="index.html" class="text-xl font-black tracking-tight text-foreground hover:text-cyan-400 transition-colors">
+          SEUAPP
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-sm font-medium text-muted-fg hover:text-foreground transition-colors">Home</a>
+          <a href="index.html#features" class="text-sm font-medium text-muted-fg hover:text-foreground transition-colors">Features</a>
+          <a href="catalogo.html" class="text-sm font-medium transition-colors" style="color: var(--color-primary);">Catálogo</a>
+          <a href="index.html#faq" class="text-sm font-medium text-muted-fg hover:text-foreground transition-colors">FAQ</a>
+          <a href="index.html#download"
+             class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-semibold text-sm text-black"
+             style="background: var(--color-primary);">
+            Download
+          </a>
+          <button id="theme-toggle" type="button"
+                  class="relative rounded-full p-2 text-muted-fg hover:text-foreground transition-colors hover:bg-white/5"
+                  aria-label="Toggle theme">
+            <svg class="icon-sun h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2"/>
+            </svg>
+            <svg class="icon-moon h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="md:hidden flex items-center gap-3">
+          <button id="theme-toggle-mobile" type="button"
+                  class="relative rounded-full p-2 text-muted-fg hover:text-foreground transition-colors"
+                  aria-label="Toggle theme">
+            <svg class="icon-sun h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2"/></svg>
+            <svg class="icon-moon h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2">
+              <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/>
+            </svg>
+          </button>
+          <button id="hamburger" class="p-2 rounded-lg neu-flat text-foreground" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="md:hidden border-t px-6 py-4 flex flex-col gap-4"
+           style="border-color: var(--border-color); background: var(--bg-card);">
+        <a href="index.html" class="text-sm font-medium text-muted-fg hover:text-foreground transition-colors">Home</a>
+        <a href="catalogo.html" class="text-sm font-medium" style="color: var(--color-primary);">Catálogo</a>
+        <a href="index.html#faq" class="text-sm font-medium text-muted-fg hover:text-foreground transition-colors">FAQ</a>
+        <a href="index.html#download"
+           class="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 font-semibold text-sm text-black"
+           style="background: var(--color-primary);">
+          Download
+        </a>
+      </div>
+    </nav>
+
+    <!-- =============================================
+         PAGE HEADER
+         ============================================= -->
+    <header class="pt-32 pb-12 px-6">
+      <div class="mx-auto max-w-7xl">
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 text-sm text-muted-fg mb-6">
+          <a href="index.html" class="hover:text-foreground transition-colors">Home</a>
+          <span>/</span>
+          <span class="text-foreground font-medium">Catálogo</span>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-3">
+              Catálogo Completo
+            </h1>
+            <p class="text-lg text-muted-fg max-w-xl">
+              <!-- Subtítulo — altere conforme seu posicionamento -->
+              Todos os produtos disponíveis. Filtre por categoria e encontre o que você precisa.
+            </p>
+          </div>
+          <!-- Contador de resultados -->
+          <p class="text-sm text-muted-fg shrink-0">
+            <span id="result-count" class="font-bold text-foreground">0</span> produtos encontrados
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- =============================================
+         FILTROS + BUSCA
+         ============================================= -->
+    <div class="sticky top-[65px] z-40 px-6 py-4 border-b backdrop-blur-md"
+         style="background: color-mix(in srgb, var(--bg-background) 92%, transparent); border-color: var(--border-color);">
+      <div class="mx-auto max-w-7xl flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+
+        <!-- Chips de categoria -->
+        <div class="flex flex-wrap gap-2" id="filter-chips">
+          <!-- Chip "Todos" começa ativo -->
+          <button class="filter-chip active rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wide border transition-all"
+                  style="border-color: var(--border-color); background: var(--bg-card);"
+                  data-filter="todos">
+            Todos
+          </button>
+          <!-- Adicione um chip por categoria. O valor de data-filter deve bater com data-category nos cards -->
+          <button class="filter-chip rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wide border transition-all"
+                  style="border-color: var(--border-color); background: var(--bg-card);"
+                  data-filter="categoria-a">
+            Categoria A
+          </button>
+          <button class="filter-chip rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wide border transition-all"
+                  style="border-color: var(--border-color); background: var(--bg-card);"
+                  data-filter="categoria-b">
+            Categoria B
+          </button>
+          <button class="filter-chip rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wide border transition-all"
+                  style="border-color: var(--border-color); background: var(--bg-card);"
+                  data-filter="categoria-c">
+            Categoria C
+          </button>
+        </div>
+
+        <!-- Busca por nome -->
+        <div class="relative w-full sm:w-72">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-fg pointer-events-none"
+               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input id="search-input" type="text" placeholder="Buscar produto..."
+                 class="w-full rounded-full pl-9 pr-4 py-2 text-sm font-medium outline-none border transition-all focus:border-cyan-500"
+                 style="background: var(--bg-card); border-color: var(--border-color); color: var(--text-foreground);" />
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =============================================
+         GRID DE PRODUTOS
+         ============================================= -->
+    <main class="px-6 py-12">
+      <div class="mx-auto max-w-7xl">
+        <div id="product-grid">
+
+          <!-- ==================================================
+               PRODUCT CARD — copie e cole quantos precisar
+               Atributos obrigatórios no elemento raiz:
+                 data-category="nome-da-categoria"  → deve bater com o chip
+                 data-name="nome do produto"        → usado na busca
+               ================================================== -->
+
+          <!-- PRODUTO 1 -->
+          <div class="product-card group rounded-3xl overflow-hidden neu-flat transition-transform hover:scale-[1.02]"
+               style="background: var(--bg-card);"
+               data-category="categoria-a"
+               data-name="nome do produto 1">
+            <div class="relative w-full aspect-[4/3] overflow-hidden"
+                 style="background: linear-gradient(135deg, rgba(0,229,255,0.12), rgba(0,184,212,0.05));">
+              <!-- <img src="sua-imagem.jpg" class="w-full h-full object-cover" alt="Produto 1"> -->
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="text-5xl opacity-25">🖼</span>
+              </div>
+              <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wide rounded-full px-3 py-1"
+                    style="background: rgba(0,229,255,0.15); color: var(--color-primary); border: 1px solid rgba(0,229,255,0.2);">
+                Categoria A
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-foreground mb-1 group-hover:text-cyan-400 transition-colors">
+                Nome do Produto 1
+              </h3>
+              <p class="text-muted-fg text-sm leading-relaxed mb-5">
+                Descrição objetiva. O que o produto faz e para quem é indicado.
+              </p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs text-muted-fg line-through mr-1">R$ 199</span>
+                  <span class="text-xl font-extrabold text-foreground">R$ 97</span>
+                </div>
+                <a href="#"
+                   class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold text-black transition-all hover:shadow-lg hover:-translate-y-0.5"
+                   style="background: var(--color-primary);">
+                  Comprar
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUTO 2 -->
+          <div class="product-card group rounded-3xl overflow-hidden neu-flat transition-transform hover:scale-[1.02]"
+               style="background: var(--bg-card);"
+               data-category="categoria-a"
+               data-name="nome do produto 2">
+            <div class="relative w-full aspect-[4/3] overflow-hidden"
+                 style="background: linear-gradient(135deg, rgba(139,127,214,0.12), rgba(181,168,232,0.05));">
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="text-5xl opacity-25">🖼</span>
+              </div>
+              <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wide rounded-full px-3 py-1"
+                    style="background: rgba(255,215,0,0.15); color: #ffd700; border: 1px solid rgba(255,215,0,0.2);">
+                Mais vendido
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-foreground mb-1 group-hover:text-cyan-400 transition-colors">
+                Nome do Produto 2
+              </h3>
+              <p class="text-muted-fg text-sm leading-relaxed mb-5">
+                Destaque o benefício principal. Uma frase que convença o visitante a clicar.
+              </p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs text-muted-fg line-through mr-1">R$ 297</span>
+                  <span class="text-xl font-extrabold text-foreground">R$ 147</span>
+                </div>
+                <a href="#"
+                   class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold text-black transition-all hover:shadow-lg hover:-translate-y-0.5"
+                   style="background: var(--color-primary);">
+                  Comprar
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUTO 3 — Premium (borda gradiente) -->
+          <div class="product-card group rounded-3xl overflow-hidden transition-transform hover:scale-[1.02] p-[2px]"
+               style="background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));"
+               data-category="categoria-b"
+               data-name="nome do produto 3 premium">
+            <div class="rounded-[calc(1.5rem-2px)] overflow-hidden h-full" style="background: var(--bg-card);">
+              <div class="relative w-full aspect-[4/3] overflow-hidden"
+                   style="background: linear-gradient(135deg, rgba(0,229,255,0.15), rgba(0,184,212,0.08));">
+                <div class="w-full h-full flex items-center justify-center">
+                  <span class="text-5xl opacity-25">🖼</span>
+                </div>
+                <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wide rounded-full px-3 py-1"
+                      style="background: rgba(0,229,255,0.2); color: var(--color-primary); border: 1px solid rgba(0,229,255,0.3);">
+                  Premium
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-foreground mb-1 group-hover:text-cyan-400 transition-colors">
+                  Nome do Produto 3
+                </h3>
+                <p class="text-muted-fg text-sm leading-relaxed mb-5">
+                  O produto topo de linha. Para quem quer o resultado mais completo disponível.
+                </p>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-xs text-muted-fg line-through mr-1">R$ 497</span>
+                    <span class="text-xl font-extrabold text-foreground">R$ 247</span>
+                  </div>
+                  <a href="#"
+                     class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold text-black transition-all hover:shadow-lg hover:-translate-y-0.5"
+                     style="background: var(--color-primary);">
+                    Comprar
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUTO 4 -->
+          <div class="product-card group rounded-3xl overflow-hidden neu-flat transition-transform hover:scale-[1.02]"
+               style="background: var(--bg-card);"
+               data-category="categoria-b"
+               data-name="nome do produto 4">
+            <div class="relative w-full aspect-[4/3] overflow-hidden"
+                 style="background: linear-gradient(135deg, rgba(255,107,138,0.1), rgba(106,204,168,0.06));">
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="text-5xl opacity-25">🖼</span>
+              </div>
+              <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wide rounded-full px-3 py-1"
+                    style="background: rgba(139,127,214,0.15); color: #b5a8e8; border: 1px solid rgba(139,127,214,0.2);">
+                Categoria B
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-foreground mb-1 group-hover:text-cyan-400 transition-colors">
+                Nome do Produto 4
+              </h3>
+              <p class="text-muted-fg text-sm leading-relaxed mb-5">
+                Mais um produto do portfólio. Adapte o texto para o seu caso específico.
+              </p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xl font-extrabold text-foreground">R$ 67</span>
+                </div>
+                <a href="#"
+                   class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold text-black transition-all hover:shadow-lg hover:-translate-y-0.5"
+                   style="background: var(--color-primary);">
+                  Comprar
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUTO 5 -->
+          <div class="product-card group rounded-3xl overflow-hidden neu-flat transition-transform hover:scale-[1.02]"
+               style="background: var(--bg-card);"
+               data-category="categoria-c"
+               data-name="nome do produto 5">
+            <div class="relative w-full aspect-[4/3] overflow-hidden"
+                 style="background: linear-gradient(135deg, rgba(255,200,61,0.1), rgba(255,229,153,0.05));">
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="text-5xl opacity-25">🖼</span>
+              </div>
+              <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wide rounded-full px-3 py-1"
+                    style="background: rgba(255,200,61,0.15); color: #ffc83d; border: 1px solid rgba(255,200,61,0.2);">
+                Categoria C
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-foreground mb-1 group-hover:text-cyan-400 transition-colors">
+                Nome do Produto 5
+              </h3>
+              <p class="text-muted-fg text-sm leading-relaxed mb-5">
+                Produto da categoria C. Descreva o diferencial para esse segmento específico.
+              </p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs text-muted-fg line-through mr-1">R$ 397</span>
+                  <span class="text-xl font-extrabold text-foreground">R$ 197</span>
+                </div>
+                <a href="#"
+                   class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold text-black transition-all hover:shadow-lg hover:-translate-y-0.5"
+                   style="background: var(--color-primary);">
+                  Comprar
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PRODUTO 6 -->
+          <div class="product-card group rounded-3xl overflow-hidden neu-flat transition-transform hover:scale-[1.02]"
+               style="background: var(--bg-card);"
+               data-category="categoria-c"
+               data-name="nome do produto 6">
+            <div class="relative w-full aspect-[4/3] overflow-hidden"
+                 style="background: linear-gradient(135deg, rgba(61,107,155,0.12), rgba(106,169,255,0.06));">
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="text-5xl opacity-25">🖼</span>
+              </div>
+              <span class="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wide rounded-full px-3 py-1"
+                    style="background: rgba(61,107,155,0.2); color: #6aa9ff; border: 1px solid rgba(61,107,155,0.3);">
+                Categoria C
+              </span>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-foreground mb-1 group-hover:text-cyan-400 transition-colors">
+                Nome do Produto 6
+              </h3>
+              <p class="text-muted-fg text-sm leading-relaxed mb-5">
+                Último produto da grade inicial. Continue o padrão para os demais itens do catálogo.
+              </p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xl font-extrabold text-foreground">R$ 127</span>
+                </div>
+                <a href="#"
+                   class="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-bold text-black transition-all hover:shadow-lg hover:-translate-y-0.5"
+                   style="background: var(--color-primary);">
+                  Comprar
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /#product-grid -->
+
+        <!-- Estado vazio (aparece quando busca/filtro não retorna nada) -->
+        <div id="empty-state" class="hidden text-center py-24">
+          <div class="text-6xl mb-4 opacity-30">🔍</div>
+          <p class="text-foreground font-semibold text-lg mb-2">Nenhum produto encontrado</p>
+          <p class="text-muted-fg text-sm">Tente outro termo ou remova o filtro de categoria.</p>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- =============================================
+         FOOTER
+         ============================================= -->
+    <footer class="neu-flat py-12 px-6 mt-4 border-t" style="background: var(--bg-card); border-color: var(--border-color);">
+      <div class="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <p class="text-sm text-muted-fg">© 2026 SEUAPP.</p>
+        <div class="flex items-center gap-6 flex-wrap justify-center">
+          <a href="#" class="text-sm text-muted-fg hover:text-foreground transition-colors">Privacidade</a>
+          <a href="#" class="text-sm text-muted-fg hover:text-foreground transition-colors">Termos</a>
+          <a href="#" class="text-sm text-muted-fg hover:text-foreground transition-colors">Licença</a>
+          <a href="index.html" class="text-sm text-muted-fg hover:text-foreground transition-colors">← Voltar para home</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- =============================================
+       JAVASCRIPT — filtro + busca + tema + hamburger
+       ============================================= -->
+  <script>
+    // ---- Theme ----
+    (function() {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'light') document.documentElement.classList.remove('dark');
+      else if (saved === 'dark' || prefersDark) document.documentElement.classList.add('dark');
+    })();
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    }
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+
+    // ---- Hamburger ----
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    });
+
+    // ---- Filtro + Busca ----
+    const cards = document.querySelectorAll('.product-card');
+    const chips = document.querySelectorAll('.filter-chip');
+    const searchInput = document.getElementById('search-input');
+    const resultCount = document.getElementById('result-count');
+    const emptyState = document.getElementById('empty-state');
+
+    let activeFilter = 'todos';
+    let searchQuery = '';
+
+    function applyFilters() {
+      let visible = 0;
+      cards.forEach(card => {
+        const cat = card.dataset.category || '';
+        const name = (card.dataset.name || '').toLowerCase();
+        const matchCat = activeFilter === 'todos' || cat === activeFilter;
+        const matchSearch = name.includes(searchQuery);
+        const show = matchCat && matchSearch;
+        card.dataset.hidden = show ? 'false' : 'true';
+        if (show) visible++;
+      });
+      resultCount.textContent = visible;
+      emptyState.classList.toggle('hidden', visible > 0);
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeFilter = chip.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener('input', e => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      applyFilters();
+    });
+
+    // Init
+    applyFilters();
+  </script>
+
+</body>
+</html>
