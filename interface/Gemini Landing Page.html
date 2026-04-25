@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mapeamento de Elite — APROVAÇÃO TOTAL</title>
+  <meta name="description" content="Pare de estudar errado. O sistema definitivo para aprovação em carreiras policiais."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --bg:         #080810;
+      --surface:    #0f0f1a;
+      --surface-2:  #141424;
+      --border:     #1e2035;
+      --border-hi:  #2a2d50;
+      --blue:       #1a56db;
+      --blue-hi:    #4d7fe8;
+      --blue-glow:  rgba(26,86,219,0.25);
+      --red:        #c0392b;
+      --red-hi:     #e74c3c;
+      --red-glow:   rgba(192,57,43,0.3);
+      --green:      #27ae60;
+      --text:       #e8eaf2;
+      --text-mid:   #a0a8c0;
+      --text-muted: #5a6280;
+      --font-d:     'Bebas Neue', sans-serif;
+      --font-b:     'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg); color: var(--text); font-family: var(--font-b); font-size: 16px; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: linear-gradient(rgba(26,86,219,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(26,86,219,0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .z1 { position: relative; z-index: 1; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    h1, h2, h3, h4 { font-family: var(--font-d); letter-spacing: 0.03em; line-height: 1.05; }
+    h1 { font-size: clamp(2.8rem, 6vw, 5rem); }
+    h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); }
+    h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+
+    .accent-blue { color: var(--blue-hi); }
+    .accent-red  { color: var(--red-hi); }
+
+    .tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-b); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 4px 10px; border: 1px solid; }
+    .tag-red  { color: var(--red-hi); border-color: var(--red); background: rgba(192,57,43,0.1); }
+
+    /* Botões */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: var(--font-b); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 18px 32px; border: none; cursor: pointer; text-decoration: none; transition: all 0.15s; width: fit-content; }
+    .btn:active { transform: scale(0.97) !important; }
+    .btn-red { background: var(--red); color: #fff; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+    .btn-red:hover { background: var(--red-hi); box-shadow: 0 0 30px var(--red-glow); transform: translateY(-2px); }
+    .btn-full { width: 100%; }
+
+    /* Navbar Básica */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(8,8,16,0.93); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: var(--font-d); font-size: 1.45rem; letter-spacing: 0.08em; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .logo-dot { width: 8px; height: 8px; background: var(--red); flex-shrink: 0; }
+    .nav-actions { display: flex; gap: 16px; }
+
+    /* Layout Seções */
+    section { padding: 96px 0; position: relative; }
+    .section-label { display: block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+    
+    /* Hero Product */
+    .hero-product { padding: 140px 0 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .hero-content p { font-size: 1.15rem; color: var(--text-mid); margin: 24px 0 40px; line-height: 1.7; }
+    .hero-visual { position: relative; }
+    .mockup-box { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--surface), var(--surface-2)); border: 1px solid var(--border-hi); position: relative; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    .mockup-box::after { content: ''; position: absolute; inset: -1px; background: linear-gradient(45deg, var(--blue), transparent, var(--red)); z-index: -1; filter: blur(15px); opacity: 0.3; }
+    
+    @media (max-width: 900px) { .hero-product { grid-template-columns: 1fr; text-align: center; } .btn { margin: 0 auto; } }
+
+    /* Dor / Agitação */
+    .agitation-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .agitation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+    .agitation-card { padding: 32px; background: var(--bg); border: 1px solid var(--border); border-left: 3px solid var(--red); }
+    .agitation-card h4 { font-size: 1.5rem; margin-bottom: 12px; }
+    .agitation-card p { color: var(--text-muted); font-size: 0.9rem; }
+    @media (max-width: 768px) { .agitation-grid { grid-template-columns: 1fr; } }
+
+    /* Benefícios / Sistema */
+    .benefits-list { margin-top: 64px; display: flex; flex-direction: column; gap: 24px; }
+    .benefit-item { display: flex; gap: 24px; padding: 32px; background: var(--surface-2); border: 1px solid var(--border); align-items: flex-start; transition: border-color 0.2s; }
+    .benefit-item:hover { border-color: var(--blue-hi); }
+    .benefit-icon { width: 48px; height: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(26,86,219,0.1); border: 1px solid var(--blue); color: var(--blue-hi); }
+    .benefit-text h3 { margin-bottom: 8px; font-size: 1.8rem; }
+    .benefit-text p { color: var(--text-mid); font-size: 0.95rem; }
+
+    /* O que você recebe */
+    .deliverables-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; }
+    .deliverable-card { display: flex; align-items: center; gap: 16px; padding: 20px; border: 1px solid var(--border); background: var(--surface); }
+    .check-icon { color: var(--green); }
+    @media (max-width: 600px) { .deliverables-grid { grid-template-columns: 1fr; } }
+
+    /* Pricing Offer */
+    .offer-section { text-align: center; padding: 120px 0; }
+    .pricing-box { max-width: 500px; margin: 48px auto 0; background: var(--surface); border: 1px solid var(--red); padding: 48px 32px; position: relative; box-shadow: 0 0 40px var(--red-glow); }
+    .pricing-box::before { content: 'OFERTA LIMITADA'; position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: var(--red); color: #fff; font-family: var(--font-b); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; padding: 6px 16px; }
+    .price-old { text-decoration: line-through; color: var(--text-muted); font-size: 1.2rem; }
+    .price-current { font-family: var(--font-d); font-size: 4rem; line-height: 1; margin: 8px 0 24px; color: var(--text); }
+    .guarantee-text { margin-top: 24px; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+    /* FAQ */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+    .faq-q { font-family: var(--font-d); font-size: 1.4rem; color: var(--text); margin-bottom: 8px; cursor: pointer; display: flex; justify-content: space-between; }
+    .faq-a { color: var(--text-mid); font-size: 0.95rem; line-height: 1.6; display: none; }
+    .faq-item.active .faq-a { display: block; }
+    .faq-item.active .faq-q { color: var(--blue-hi); }
+
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-dot"></span> APROVAÇÃO TOTAL
+      </a>
+      <div class="nav-actions">
+        <a href="#comprar" class="btn btn-red" style="padding: 8px 16px; font-size: 0.7rem;">GARANTIR VAGA</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-product z1">
+    <div class="container hero-product">
+      <div class="hero-content">
+        <span class="tag tag-red mb-4">Mapeamento Tático 2026</span>
+        <h1>Pare de estudar o que <span class="accent-red">não cai na prova.</span></h1>
+        <p>A banca não quer saber quantas horas líquidas você fez ou quão motivado você está. Ela pune amadores. Este material ataca a causa-raiz da sua reprovação: a falta de estratégia baseada em dados reais da AOCP e Fundatec.</p>
+        <a href="#comprar" class="btn btn-red">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          QUERO ATACAR A CAUSA-RAIZ
+        </a>
+      </div>
+      <div class="hero-visual">
+        <div class="mockup-box">
+          <h2 style="color: var(--text-muted); font-size: 1.5rem;">[ IMAGEM DO PRODUTO ]</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="agitation-section z1">
+    <div class="container">
+      <span class="section-label">// A realidade do cenário</span>
+      <h2>Por que 95% dos candidatos <span class="accent-red">vão falhar?</span></h2>
+      <div class="agitation-grid">
+        <div class="agitation-card">
+          <h4>Consumo Passivo</h4>
+          <p>Você assiste a 4 horas de videoaulas, grifa PDFs e sente que o dever foi cumprido. Isso não é estudo, é entretenimento educacional. A prova cobra retenção, não visualização.</p>
+        </div>
+        <div class="agitation-card">
+          <h4>Falsas Métricas</h4>
+          <p>Medir desempenho por "horas líquidas" é a maior armadilha do concurseiro moderno. O único número que importa é o seu delta de acertos nas questões de múltipla escolha.</p>
+        </div>
+        <div class="agitation-card">
+          <h4>Generalismo</h4>
+          <p>Você estuda o edital inteiro com a mesma intensidade. A banca cobra 80% da prova baseada em 20% do edital. Quem não entende sistemas, perde tempo com o que não tem peso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="z1">
+    <div class="container" style="max-width: 900px;">
+      <span class="section-label">// O método</span>
+      <h2>Nós construímos o <span class="accent-blue">sistema definitivo.</span></h2>
+      <p style="color: var(--text-mid); margin-top: 16px;">Sem falsas promessas, sem floreios. Nós aplicamos pensamento sistêmico sobre as estatísticas das últimas provas policiais. O resultado é uma ferramenta puramente utilitária.</p>
+
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div class="benefit-text">
+            <h3>Engenharia Reversa de Banca</h3>
+            <p>Mapeamos o padrão lógico da banca organizadora. Você vai treinar exatamente o tipo de pegadinha e estruturação frasal que o examinador usa para derrubar a manada.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="benefit-text">
+            <h3>Otimização de Tempo</h3>
+            <p>Seu tempo é um recurso escasso. Nossos filtros e simulados são projetados para máxima retenção na memória de curto e médio prazo, eliminando o lixo acadêmico que cursinhos tradicionais empurram.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-4"/></svg>
+          </div>
+          <div class="benefit-text">
+            <h3>Métricas Brutais</h3>
+            <p>Tenha clareza absoluta de onde você está errando. O sistema expõe suas falhas sem piedade, permitindo que você corrija o curso antes que o edital feche as portas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="z1" style="background: var(--surface); border-top: 1px solid var(--border);">
+    <div class="container">
+      <span class="section-label">// Arsenal</span>
+      <h2>O que você recebe <span class="accent-red">imediatamente</span></h2>
+      <div class="deliverables-grid">
+        <div class="deliverable-card">
+          <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Caderno de Questões Filtradas a Dedo (Top 20% do Edital)</span>
+        </div>
+        <div class="deliverable-card">
+          <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>5 Simulados Inéditos no Padrão da Banca Organizadora</span>
+        </div>
+        <div class="deliverable-card">
+          <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Planilha de Controle de Retenção e Métricas de Erro</span>
+        </div>
+        <div class="deliverable-card">
+          <svg class="check-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Módulo Bônus: Estratégia de Execução no Dia da Prova</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="comprar" class="offer-section z1">
+    <div class="container">
+      <h2>O preço da sua <span class="accent-red">tranquilidade.</span></h2>
+      <p style="color: var(--text-mid); max-width: 600px; margin: 16px auto 0;">Não pagar por estrutura significa pagar com tempo. Você tem a escolha de ficar mais 2 anos na fila de espera, ou resolver esse problema logístico hoje.</p>
+
+      <div class="pricing-box">
+        <div class="price-old">De R$ 197,00 por apenas</div>
+        <div class="price-current">12x R$ 9,70</div>
+        <p style="color: var(--text-mid); margin-bottom: 32px;">ou R$ 97,00 à vista.</p>
+        
+        <a href="#" class="btn btn-red btn-full">
+          COMPRAR AGORA
+        </a>
+
+        <div class="guarantee-text">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Risco Zero: Garantia Incondicional de 7 Dias.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="z1" style="background: var(--surface-2); border-top: 1px solid var(--border);">
+    <div class="container" style="max-width: 800px;">
+      <span class="section-label">// Dúvidas de Praxe</span>
+      <h2 style="margin-bottom: 48px;">Perguntas Frequentes</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">O acesso é imediato? <span>+</span></div>
+        <div class="faq-a">Sim. Assim que o pagamento for aprovado pelo sistema, você recebe os dados de acesso automaticamente no seu e-mail, podendo iniciar a execução da estratégia no mesmo minuto.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Serve para quem está começando do zero? <span>+</span></div>
+        <div class="faq-a">Sim. Na verdade, quem começa do zero com o sistema certo evita perder os primeiros 8 meses criando vícios de estudo ineficientes e resolvendo questões inúteis.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">E se o edital mudar? <span>+</span></div>
+        <div class="faq-a">Nosso modelo é focado em causa-raiz. As leis mudam, mas a estrutura lógica de como as bancas operam e como a memória humana retém informação tática permanece a mesma. O material é atualizado conforme retificações oficiais, sem custo extra.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="z1" style="border-top: 1px solid var(--border); padding: 48px 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+      <div class="logo" style="font-size:1.1rem;">
+        <span class="logo-dot"></span> APROVAÇÃO TOTAL
+      </div>
+      <span style="color: var(--text-muted); font-size: 0.8rem;">© 2026 Aprovação Total. O sistema vence a motivação.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Script básico para o FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        if(!isActive) item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
