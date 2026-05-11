@@ -1,267 +1,565 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TBJ2GSS4');</script>
-<!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercer Questões | Hub de Treinamento</title>
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-icon.png">
-    
-    <style>
-        :root {
-            --bg: #030712;
-            --card-bg: #111827;
-            --primary: #3b82f6;
-            --text: #f9fafb;
-            --text-dim: #9ca3af;
-            --border: rgba(255, 255, 255, 0.1);
-        }
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>MERCER — Hub de Treinamento</title>
+  <meta name="description" content="Sistemas de treinamento tático e questões comentadas para concursos policiais."/>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TBJ2GSS4');</script>
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', -apple-system, system-ui, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','2592117757918488');fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2592117757918488&ev=PageView&noscript=1"/></noscript>
 
-        .glow {
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(3, 7, 18, 0) 70%);
-            z-index: -1;
-            pointer-events: none;
-        }
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-icon.png"/>
 
-        header {
-            padding: 60px 20px 40px;
-            text-align: center;
-            max-width: 800px;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
 
-        header h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 10px;
-            background: linear-gradient(to bottom, #fff 0%, #9ca3af 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+  <style>
+    /* ── Tokens ── */
+    :root {
+      --bg:         #080810;
+      --surface:    #0f0f1a;
+      --surface-2:  #141424;
+      --border:     #1e2035;
+      --border-hi:  #2a2d50;
+      --blue:       #1a56db;
+      --blue-hi:    #4d7fe8;
+      --blue-glow:  rgba(26,86,219,0.3);
+      --red:        #c0392b;
+      --red-hi:     #e74c3c;
+      --red-glow:   rgba(192,57,43,0.35);
+      --text:       #e8eaf2;
+      --text-mid:   #a0a8c0;
+      --text-muted: #5a6280;
+      --font-d: 'Bebas Neue', sans-serif;
+      --font-b: 'DM Sans', sans-serif;
+    }
 
-        header p {
-            color: var(--text-dim);
-            font-size: 1.2rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-        .container {
-            width: 100%;
-            max-width: 480px;
-            padding: 20px;
-            z-index: 1;
-        }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-b);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .hero-cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary);
-            color: #fff;
-            text-decoration: none;
-            padding: 18px;
-            border-radius: 50px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-        }
+    /* Grade tática */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(26,86,219,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,86,219,0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
 
-        .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
-        }
+    /* Glow ambiental no topo */
+    .ambient {
+      position: fixed;
+      top: -80px; left: 50%; transform: translateX(-50%);
+      width: 560px; height: 400px;
+      background: radial-gradient(ellipse, rgba(26,86,219,0.1) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
 
-        .links-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+    .z1 { position: relative; z-index: 1; }
 
-        .link-card {
-            display: flex;
-            align-items: center;
-            background: rgba(17, 24, 39, 0.7);
-            border: 1px solid var(--border);
-            padding: 12px;
-            border-radius: 20px;
-            text-decoration: none;
-            color: inherit;
-            backdrop-filter: blur(10px);
-            transition: all 0.2s ease;
-        }
+    /* ── Stripe no topo ── */
+    .top-stripe {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 2px;
+      background: linear-gradient(to right, var(--blue), var(--red));
+    }
 
-        .link-card:hover {
-            border-color: var(--primary);
-            background: rgba(31, 41, 55, 0.8);
-            transform: scale(1.01);
-        }
+    /* ── Layout central ── */
+    .hub {
+      width: 100%;
+      max-width: 480px;
+      padding: 72px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
 
-        .card-img {
-            width: 54px;
-            height: 54px;
-            border-radius: 12px;
-            object-fit: cover;
-            margin-right: 16px;
-            border: 1px solid var(--border);
-        }
+    /* ── Header ── */
+    .hub-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
 
-        .card-info h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
+    /* Linha decorativa acima do nome */
+    .hub-header::before {
+      content: '';
+      display: block;
+      width: 32px; height: 2px;
+      background: var(--red);
+      margin: 0 auto 18px;
+    }
 
-        .card-info p {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-        }
+    .hub-name {
+      font-family: var(--font-d);
+      font-size: 4rem;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .hub-name .dot {
+      width: 10px; height: 10px;
+      background: var(--red);
+      display: inline-block;
+      flex-shrink: 0;
+      margin-bottom: 4px;
+    }
 
-        footer {
-            width: 100%;
-            text-align: center; /* Centraliza o texto */
-            padding: 40px 0;
-            margin-top: 50px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.875rem;
-            color: #6b7280;
-            clear: both; /* Garante que ele fique abaixo de tudo */
-        }
+    .hub-sub {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
 
-        footer a {
-            color: #3b82f6;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+    /* Linha dupla decorativa abaixo */
+    .hub-divider {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .hub-divider span {
+      display: block;
+      height: 1px;
+      background: var(--border);
+    }
+    .hub-divider span:first-child  { width: 48px; }
+    .hub-divider span:last-child   { width: 48px; }
+    .hub-divider em {
+      font-style: normal;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
+    /* ── CTA principal (edital aberto) ── */
+    .cta-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 28px;
+      margin-bottom: 32px;
+      background: var(--red);
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--font-d);
+      font-size: 1.3rem;
+      letter-spacing: 0.1em;
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+      transition: background 0.15s, box-shadow 0.2s, transform 0.15s;
+    }
+    .cta-main::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-main:hover {
+      background: var(--red-hi);
+      box-shadow: 0 0 28px var(--red-glow);
+      transform: translateY(-2px);
+    }
+    .cta-main:active { transform: scale(0.98); }
 
-        /* Mobile Adjustments */
-        @media (max-width: 480px) {
-            header h1 { font-size: 2.2rem; }
-            .container { padding: 15px; }
-        }
-    </style>
-    <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2592117757918488');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2592117757918488&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    /* Pulsação discreta no CTA */
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0 var(--red-glow); }
+      70%  { box-shadow: 0 0 0 12px rgba(192,57,43,0); }
+      100% { box-shadow: 0 0 0 0 rgba(192,57,43,0); }
+    }
+    .cta-main { animation: pulse-ring 2.5s ease infinite; }
+    .cta-main:hover { animation: none; }
+
+    /* Indicador "live" */
+    .live-dot {
+      position: relative;
+      width: 8px; height: 8px;
+      flex-shrink: 0;
+    }
+    .live-dot::before,
+    .live-dot::after {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: 50%;
+      background: #fff;
+    }
+    .live-dot::after {
+      animation: live-pulse 1.4s ease-out infinite;
+    }
+    @keyframes live-pulse {
+      0%   { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(2.8); opacity: 0; }
+    }
+
+    /* ── Cards de link ── */
+    .links-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    /* Borda esquerda colorida — estilo dossiê */
+    .link-card::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--border);
+      transition: background 0.2s;
+    }
+    /* Linha de fundo ao hover */
+    .link-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, var(--blue), var(--red));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.25s;
+    }
+
+    .link-card:hover {
+      border-color: var(--border-hi);
+      background: var(--surface-2);
+      transform: translateX(3px);
+    }
+    .link-card:hover::before { background: var(--blue); }
+    .link-card:hover::after  { transform: scaleX(1); }
+    .link-card:active { transform: scale(0.99); }
+
+    /* Variante — card com borda azul fixa (destaque) */
+    .link-card.featured { border-color: rgba(26,86,219,0.4); }
+    .link-card.featured::before { background: var(--blue); }
+
+    /* Variante — card desabilitado (em breve) */
+    .link-card.soon {
+      opacity: 0.5;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    .card-thumb {
+      width: 52px; height: 52px;
+      flex-shrink: 0;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card-thumb img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .card-thumb .thumb-ph {
+      font-size: 1.6rem; opacity: 0.4;
+    }
+
+    .card-body { flex: 1; min-width: 0; }
+    .card-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 3px;
+    }
+    .card-desc {
+      font-size: 0.77rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-badge {
+      flex-shrink: 0;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border: 1px solid;
+    }
+    .badge-blue  { color: var(--blue-hi); border-color: var(--blue);  background: rgba(26,86,219,0.1); }
+    .badge-red   { color: var(--red-hi);  border-color: var(--red);   background: rgba(192,57,43,0.1); }
+    .badge-green { color: #2ecc71;        border-color: #27ae60;      background: rgba(39,174,96,0.1); }
+    .badge-dim   { color: var(--text-muted); border-color: var(--border); }
+
+    /* Arrow no hover */
+    .card-arrow {
+      flex-shrink: 0;
+      color: var(--text-muted);
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .link-card:hover .card-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ── Separador de seção ── */
+    .section-sep {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0 12px;
+    }
+    .section-sep::before,
+    .section-sep::after {
+      content: ''; flex: 1; height: 1px;
+      background: var(--border);
+    }
+    .section-sep span {
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    /* ── Footer ── */
+    .hub-footer {
+      width: 100%;
+      text-align: center;
+      padding: 40px 20px 32px;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+      position: relative; z-index: 1;
+    }
+    /* Stripe decorativa */
+    .hub-footer::before {
+      content: '';
+      display: block;
+      width: 32px; height: 2px;
+      background: linear-gradient(to right, var(--blue), var(--red));
+      margin: 0 auto 20px;
+    }
+    .hub-footer-copy {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+    .hub-footer-links { display: flex; justify-content: center; gap: 4px; flex-wrap: wrap; }
+    .hub-footer-links a {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0 8px;
+      border-right: 1px solid var(--border);
+      transition: color 0.15s;
+    }
+    .hub-footer-links a:last-child { border-right: none; }
+    .hub-footer-links a:hover { color: var(--blue-hi); }
+
+    /* ── Animações de entrada ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fu0 { animation: fadeUp 0.5s ease both; }
+    .fu1 { animation: fadeUp 0.5s 0.08s ease both; }
+    .fu2 { animation: fadeUp 0.5s 0.16s ease both; }
+    .fu3 { animation: fadeUp 0.5s 0.24s ease both; }
+    .fu4 { animation: fadeUp 0.5s 0.32s ease both; }
+    .fu5 { animation: fadeUp 0.5s 0.40s ease both; }
+    .fu6 { animation: fadeUp 0.5s 0.48s ease both; }
+    .fu7 { animation: fadeUp 0.5s 0.56s ease both; }
+
+    @media (max-width: 480px) {
+      .hub { padding: 60px 16px 48px; }
+      .hub-name { font-size: 3.2rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBJ2GSS4"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- GTM noscript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBJ2GSS4"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <div class="glow"></div>
+  <div class="top-stripe"></div>
+  <div class="ambient"></div>
 
-    <header>
-        <h1>MERCER</h1>
-        <p>Sistemas de treinamento tático e questões comentadas.</p>
+  <main class="hub z1">
+
+    <!-- HEADER -->
+    <header class="hub-header fu0">
+      <div class="hub-name">
+        <span class="dot"></span>
+        MERCER
+        <span class="dot"></span>
+      </div>
+      <p class="hub-sub">Treinamento tático · Questões comentadas</p>
+      <div class="hub-divider">
+        <span></span>
+        <em>Concursos Policiais</em>
+        <span></span>
+      </div>
     </header>
 
-    <div class="container">
-        
-        <a href="/catalogo/agente-transito-camboriu-2026" class="hero-cta">
-            EDITAL ABERTO: CAMBORIÚ 2026
-        </a>
+    <!-- CTA DESTAQUE — edital aberto -->
+    <a href="/catalogo/agente-transito-camboriu-2026" class="cta-main fu1">
+      <span class="live-dot"></span>
+      EDITAL ABERTO: CAMBORIÚ 2026
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
 
-        <div class="links-grid">
-            
-            <a href="/catalogo/agente-transito-camboriu-2026" class="link-card">
-                <img src="/assets/camboriu-thumb.png" class="card-img" alt="Camboriú">
-                <div class="card-info">
-                    <h3>Agente de Trânsito</h3>
-                    <p>100 Questões Inéditas e Comentadas Padrão IDECAN</p>
-                </div>
-            </a>
+    <!-- LINKS -->
+    <div class="links-list">
 
-            <a href="#" class="link-card">
-                <img src="/assets/direito-thumb.png" class="card-img" alt="PMPR">
-                <div class="card-info">
-                    <h3>COMBO 1000 Questões de Direito Inéditas e Comentadas</h3>
-                    <p>Código Penal, Processo, Constitucional e Administrativo</p>
-                </div>
-            </a>
-
-            <a href="#" class="link-card">
-                <img src="/assets/codigo-penal-thumb.png" class="card-img" alt="PMPR">
-                <div class="card-info">
-                    <h3>Caderno de Questões Direito Penal Gratuito</h3>
-                    <p>Questões Originais e Comentadas, Padrão das Principais Bancas</p>
-                </div>
-            </a>
-
-            <a href="#" class="link-card">
-                <img src="/assets/pmpr-thumb.png" class="card-img" alt="PMPR">
-                <div class="card-info">
-                    <h3>PMPR 2026 (Em Breve)</h3>
-                    <p>Material de Estudo Completo</p>
-                </div>
-            </a>
-
-            <a href="https://github.com/shrmadhant" class="link-card">
-                <img src="/assets/github-thumb.png" class="card-img" alt="GitHub">
-                <div class="card-info">
-                    <h3>Hardening Lab</h3>
-                    <p>Repositório de Cibersegurança</p>
-                </div>
-            </a>
-
+      <!-- Produto ativo -->
+      <a href="/catalogo/agente-transito-camboriu-2026" class="link-card featured fu2">
+        <div class="card-thumb">
+          <img src="/assets/camboriu-thumb.png" alt="Camboriú"/>
         </div>
-    </div>
+        <div class="card-body">
+          <div class="card-title">Agente de Trânsito — Camboriú 2026</div>
+          <div class="card-desc">100 Questões Inéditas e Comentadas · Padrão IDECAN</div>
+        </div>
+        <span class="card-badge badge-blue">Disponível</span>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
 
-    <footer>
-        <p>© 2026 Mercer | Concursos Policiais</p>
-        <p>
-            <a href="/legal.html#privacidade">Privacidade</a> | 
-            <a href="/legal.html#termos">Termos</a> | 
-            <a href="/legal.html#licenca">Licença</a>
-        </p>
-    </footer>
+      <div class="section-sep fu3"><span>// Produtos</span></div>
+
+      <!-- Produto pago -->
+      <a href="#" class="link-card fu3">
+        <div class="card-thumb">
+          <img src="/assets/direito-thumb.png" alt="Combo Direito"/>
+        </div>
+        <div class="card-body">
+          <div class="card-title">COMBO 1000 Questões de Direito</div>
+          <div class="card-desc">Penal · Processual · Constitucional · Administrativo</div>
+        </div>
+        <span class="card-badge badge-red">Premium</span>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <!-- Produto gratuito -->
+      <a href="#" class="link-card fu4">
+        <div class="card-thumb">
+          <img src="/assets/codigo-penal-thumb.png" alt="Direito Penal Gratuito"/>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Caderno de Questões — Direito Penal</div>
+          <div class="card-desc">Questões Originais e Comentadas · Gratuito</div>
+        </div>
+        <span class="card-badge badge-green">Grátis</span>
+        <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <!-- Em breve -->
+      <div class="link-card soon fu5">
+        <div class="card-thumb">
+          <img src="/assets/pmpr-thumb.png" alt="PMPR"/>
+        </div>
+        <div class="card-body">
+          <div class="card-title">PMPR 2026</div>
+          <div class="card-desc">Material de Estudo Completo</div>
+        </div>
+        <span class="card-badge badge-dim">Em breve</span>
+      </div>
+
+      <div class="section-sep fu6"><span>// Labs</span></div>
+
+      <!-- Link externo -->
+      <a href="https://github.com/shrmadhant" class="link-card fu6" target="_blank" rel="noopener">
+        <div class="card-thumb">
+          <img src="/assets/github-thumb.png" alt="GitHub"/>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Hardening Lab</div>
+          <div class="card-desc">Repositório de Cibersegurança · GitHub</div>
+        </div>
+        <svg class="card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="hub-footer">
+    <p class="hub-footer-copy">© 2026 MERCER · Concursos Policiais</p>
+    <div class="hub-footer-links">
+      <a href="/legal.html#privacidade">Privacidade</a>
+      <a href="/legal.html#termos">Termos</a>
+      <a href="/legal.html#licenca">Licença</a>
+    </div>
+  </footer>
 
 </body>
 </html>
