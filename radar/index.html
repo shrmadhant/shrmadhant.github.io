@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TBJ2GSS4');</script>
+
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','2592117757918488');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2592117757918488&ev=PageView&noscript=1"/></noscript>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Radar de Editais — MERCER</title>
+  <meta name="description" content="Editais abertos e previstos no radar Mercer. Datas, vagas, salários e links oficiais para concursos policiais 2025/2026."/>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-icon.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ─────────────────────────────────────────
+       TOKENS — sistema idêntico ao hub
+       ───────────────────────────────────────── */
+    :root {
+      --bg:         #080810;
+      --surface:    #0f0f1a;
+      --surface-2:  #141424;
+      --border:     #1e2035;
+      --border-hi:  #2a2d50;
+      --blue:       #1a56db;
+      --blue-hi:    #4d7fe8;
+      --blue-dim:   rgba(26,86,219,0.12);
+      --blue-glow:  rgba(26,86,219,0.3);
+      --red:        #c0392b;
+      --red-hi:     #e74c3c;
+      --red-dim:    rgba(192,57,43,0.12);
+      --red-glow:   rgba(192,57,43,0.35);
+      --green:      #27ae60;
+      --green-hi:   #2ecc71;
+      --green-dim:  rgba(39,174,96,0.12);
+      --amber:      #d97706;
+      --amber-hi:   #f59e0b;
+      --amber-dim:  rgba(217,119,6,0.12);
+      --text:       #e8eaf2;
+      --text-mid:   #a0a8c0;
+      --text-muted: #5a6280;
+      --font-d: 'Bebas Neue', sans-serif;
+      --font-b: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: var(--font-b); font-size: 16px; line-height: 1.6;
+      min-height: 100vh; overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Grade tática */
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(26,86,219,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,86,219,0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    /* Glow ambiental */
+    body::after {
+      content: ''; position: fixed; top: -80px; left: 50%;
+      transform: translateX(-50%); width: 700px; height: 500px;
+      background: radial-gradient(ellipse, rgba(26,86,219,0.08) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .z1 { position: relative; z-index: 1; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─────────────────────────────────────────
+       STRIPE + TOPNAV
+       ───────────────────────────────────────── */
+    .top-stripe {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 2px;
+      background: linear-gradient(to right, var(--blue), var(--red));
+    }
+
+    .topnav {
+      position: fixed; top: 2px; left: 0; right: 0; z-index: 100;
+      background: rgba(8,8,16,0.95); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topnav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px; padding: 0 24px;
+      max-width: 1140px; margin: 0 auto;
+    }
+    .nav-logo {
+      font-family: var(--font-d); font-size: 1.35rem; letter-spacing: 0.08em;
+      color: var(--text); text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+      transition: color 0.15s;
+    }
+    .nav-logo:hover { color: var(--blue-hi); }
+    .logo-dot { width: 7px; height: 7px; background: var(--red); flex-shrink: 0; }
+
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-link {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-muted);
+      text-decoration: none; transition: color 0.15s;
+    }
+    .nav-link:hover  { color: var(--text); }
+    .nav-link.active { color: var(--blue-hi); }
+
+    .nav-cta {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #fff;
+      text-decoration: none; padding: 8px 18px;
+      background: var(--red);
+      clip-path: polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,7px 100%,0 calc(100% - 7px));
+      transition: background 0.15s, box-shadow 0.15s;
+    }
+    .nav-cta:hover { background: var(--red-hi); box-shadow: 0 0 16px var(--red-glow); }
+
+    @media (max-width: 640px) {
+      .nav-right .nav-link { display: none; }
+    }
+
+    /* ─────────────────────────────────────────
+       PAGE HEADER
+       ───────────────────────────────────────── */
+    .page-header {
+      padding: 96px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header::before {
+      content: ''; display: block;
+      width: 32px; height: 2px;
+      background: var(--red); margin-bottom: 20px;
+    }
+    .page-header h1 {
+      font-family: var(--font-d);
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      letter-spacing: 0.04em; line-height: 1.05;
+      margin-bottom: 12px;
+    }
+    .page-header p {
+      font-size: 0.95rem; color: var(--text-muted);
+      max-width: 560px; line-height: 1.7;
+    }
+
+    /* Contador de editais */
+    .header-meta {
+      display: flex; align-items: center; gap: 24px;
+      margin-top: 24px; flex-wrap: wrap;
+    }
+    .meta-pill {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px; border: 1px solid;
+    }
+    .meta-pill.aberto  { color: var(--green-hi); border-color: var(--green); background: var(--green-dim); }
+    .meta-pill.previsto{ color: var(--amber-hi); border-color: var(--amber); background: var(--amber-dim); }
+    .meta-pill.encerrado{ color: var(--text-muted); border-color: var(--border); }
+
+    .meta-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+    }
+    .dot-green  { background: var(--green-hi); }
+    .dot-amber  { background: var(--amber-hi); }
+    .dot-muted  { background: var(--text-muted); }
+
+    /* Atualização */
+    .update-info {
+      font-size: 0.68rem; color: var(--text-muted); margin-top: 16px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .update-info svg { color: var(--blue-hi); }
+
+    /* ─────────────────────────────────────────
+       FILTROS
+       ───────────────────────────────────────── */
+    .filters-bar {
+      position: sticky; top: 60px; z-index: 50;
+      background: rgba(8,8,16,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+    }
+    .filters-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+    }
+
+    /* Chips de status */
+    .chip-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 6px 14px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--text-muted); cursor: pointer;
+      transition: all 0.15s;
+    }
+    .chip:hover { border-color: var(--border-hi); color: var(--text); }
+    .chip.active-all     { background: var(--blue);  border-color: var(--blue);  color: #fff; }
+    .chip.active-aberto  { background: var(--green); border-color: var(--green); color: #fff; }
+    .chip.active-previsto{ background: var(--amber); border-color: var(--amber); color: #0a0a10; }
+    .chip.active-encerrado{ background: var(--surface-2); border-color: var(--border-hi); color: var(--text-muted); }
+
+    /* Busca */
+    .search-wrap { position: relative; }
+    .search-wrap svg {
+      position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+      color: var(--text-muted); pointer-events: none;
+    }
+    .search-input {
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); font-family: var(--font-b); font-size: 0.83rem;
+      padding: 7px 14px 7px 34px; width: 220px; outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-input::placeholder { color: var(--text-muted); }
+    .search-input:focus { border-color: var(--blue); }
+
+    @media (max-width: 640px) {
+      .search-input { width: 100%; }
+      .filters-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ─────────────────────────────────────────
+       GRID DE EDITAIS
+       ───────────────────────────────────────── */
+    .editais-main { padding: 40px 0 80px; }
+
+    .editais-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 1000px) { .editais-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width:  600px) { .editais-grid { grid-template-columns: 1fr; } }
+
+    /* ─────────────────────────────────────────
+       CARD DE EDITAL
+       ───────────────────────────────────────── */
+    .edital-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .edital-card:hover { border-color: var(--border-hi); transform: translateY(-3px); }
+
+    /* Barra de status no topo do card */
+    .edital-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .edital-card.aberto::before   { background: var(--green); }
+    .edital-card.previsto::before { background: var(--amber); }
+    .edital-card.encerrado::before{ background: var(--text-muted); }
+
+    /* Linha inferior ao hover */
+    .edital-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(to right, var(--blue), var(--red));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.25s;
+    }
+    .edital-card:hover::after { transform: scaleX(1); }
+
+    /* Cartão oculto pelo filtro */
+    .edital-card[data-hidden="true"] { display: none; }
+
+    /* ── Cabeçalho do card ── */
+    .card-head {
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+    }
+
+    .card-organ {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--blue-hi); margin-bottom: 5px;
+      display: block;
+    }
+    .card-cargo {
+      font-family: var(--font-d); font-size: 1.25rem;
+      color: var(--text); line-height: 1.15;
+    }
+
+    /* Badge de status */
+    .status-badge {
+      flex-shrink: 0; display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 4px 9px; border: 1px solid;
+      white-space: nowrap;
+    }
+    .status-badge .s-dot { width: 5px; height: 5px; border-radius: 50%; }
+    .badge-aberto   { color: var(--green-hi); border-color: var(--green); background: var(--green-dim); }
+    .badge-previsto { color: var(--amber-hi); border-color: var(--amber); background: var(--amber-dim); }
+    .badge-encerrado{ color: var(--text-muted); border-color: var(--border); }
+    .badge-aberto   .s-dot { background: var(--green-hi); }
+    .badge-previsto .s-dot { background: var(--amber-hi); }
+    .badge-encerrado .s-dot{ background: var(--text-muted); }
+
+    /* ── Dados do card ── */
+    .card-data {
+      padding: 16px 20px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 12px 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-item { display: flex; flex-direction: column; gap: 3px; }
+    .data-label {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-muted);
+    }
+    .data-value {
+      font-size: 0.86rem; font-weight: 600; color: var(--text);
+      line-height: 1.3;
+    }
+    .data-value.highlight { color: var(--green-hi); font-family: var(--font-d); font-size: 1.05rem; }
+
+    /* ── Datas-chave ── */
+    .card-dates {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .card-dates-title {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 2px;
+    }
+    .date-row {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    }
+    .date-event { font-size: 0.78rem; color: var(--text-mid); }
+    .date-val   { font-size: 0.78rem; font-weight: 700; color: var(--text); white-space: nowrap; }
+    .date-val.urgent { color: var(--red-hi); }
+    .date-val.past   { color: var(--text-muted); text-decoration: line-through; }
+
+    /* Barra de progresso do prazo */
+    .deadline-bar {
+      height: 3px; background: var(--border);
+      margin-top: 8px; overflow: hidden;
+    }
+    .deadline-fill {
+      height: 100%; background: var(--green);
+      transition: width 0s;
+    }
+    .deadline-fill.warn   { background: var(--amber); }
+    .deadline-fill.urgent { background: var(--red); }
+
+    /* ── Notas / observações ── */
+    .card-notes {
+      padding: 12px 20px;
+      font-size: 0.78rem; color: var(--text-muted); line-height: 1.6;
+      border-bottom: 1px solid var(--border);
+      flex: 1;
+    }
+    .card-notes em { font-style: normal; color: var(--amber-hi); }
+
+    /* ── Rodapé do card ── */
+    .card-foot {
+      padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    }
+    .card-local {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; color: var(--text-muted);
+    }
+    .card-local svg { color: var(--blue-hi); flex-shrink: 0; }
+
+    .card-actions { display: flex; gap: 8px; }
+
+    .btn-edital {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 7px 14px;
+      text-decoration: none; border: 1px solid; transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .btn-edital.primary {
+      background: var(--blue); border-color: var(--blue); color: #fff;
+    }
+    .btn-edital.primary:hover { background: var(--blue-hi); border-color: var(--blue-hi); box-shadow: 0 0 12px var(--blue-glow); }
+    .btn-edital.secondary {
+      background: transparent; border-color: var(--border); color: var(--text-muted);
+    }
+    .btn-edital.secondary:hover { border-color: var(--border-hi); color: var(--text); }
+    .btn-edital.disabled {
+      background: transparent; border-color: var(--border);
+      color: var(--text-muted); opacity: 0.45; pointer-events: none;
+    }
+
+    /* ─────────────────────────────────────────
+       CARD "EM OBSERVAÇÃO" — menor, sem datas
+       ───────────────────────────────────────── */
+    .edital-card.observacao { opacity: 0.65; }
+    .edital-card.observacao:hover { opacity: 1; }
+
+    /* ─────────────────────────────────────────
+       ESTADO VAZIO
+       ───────────────────────────────────────── */
+    #empty-state {
+      display: none;
+      text-align: center; padding: 80px 0; grid-column: 1 / -1;
+    }
+    #empty-state .empty-icon { font-size: 2.5rem; opacity: 0.2; margin-bottom: 12px; }
+    #empty-state strong { display: block; font-size: 1rem; color: var(--text); margin-bottom: 6px; }
+    #empty-state p { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* ─────────────────────────────────────────
+       AVISO DE ATUALIZAÇÃO MANUAL
+       ───────────────────────────────────────── */
+    .notice-bar {
+      background: var(--amber-dim); border: 1px solid var(--amber);
+      border-left: 3px solid var(--amber-hi);
+      padding: 12px 20px; margin-bottom: 24px;
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .notice-bar svg { color: var(--amber-hi); flex-shrink: 0; margin-top: 2px; }
+    .notice-bar p   { font-size: 0.8rem; color: var(--text-mid); line-height: 1.5; }
+    .notice-bar strong { color: var(--amber-hi); }
+
+    /* ─────────────────────────────────────────
+       FOOTER
+       ───────────────────────────────────────── */
+    .page-footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+      position: relative;
+    }
+    .page-footer::before {
+      content: ''; display: block;
+      width: 100%; height: 2px;
+      background: linear-gradient(to right, var(--blue), var(--red), transparent);
+      position: absolute; top: 0; left: 0;
+    }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-logo {
+      font-family: var(--font-d); font-size: 1.1rem; letter-spacing: 0.08em;
+      color: var(--text); text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .footer-links { display: flex; gap: 4px; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text-muted); text-decoration: none;
+      padding: 0 10px; border-right: 1px solid var(--border); transition: color 0.15s;
+    }
+    .footer-links a:last-child { border-right: none; }
+    .footer-links a:hover { color: var(--blue-hi); }
+    .footer-copy { font-size: 0.68rem; color: var(--text-muted); }
+
+    /* ─────────────────────────────────────────
+       ANIMAÇÕES
+       ───────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fu0 { animation: fadeUp 0.5s      ease both; }
+    .fu1 { animation: fadeUp 0.5s .08s ease both; }
+    .fu2 { animation: fadeUp 0.5s .16s ease both; }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <!-- GTM noscript -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBJ2GSS4"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="top-stripe"></div>
+
+  <!-- ══════════════════════════════
+       TOPNAV
+       ══════════════════════════════ -->
+  <nav class="topnav z1">
+    <div class="topnav-inner">
+      <a href="/index.html" class="nav-logo">
+        <span class="logo-dot"></span>
+        MERCER
+      </a>
+      <div class="nav-right">
+        <a href="/index.html" class="nav-link">Hub</a>
+        <a href="/editais.html" class="nav-link active">Editais</a>
+        <a href="/catalogo" class="nav-link">Catálogo</a>
+        <a href="/catalogo" class="nav-cta">Ver materiais</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════
+       PAGE HEADER
+       ══════════════════════════════ -->
+  <header class="page-header z1">
+    <div class="container">
+      <div class="fu0">
+        <h1>RADAR DE <span style="color:var(--blue-hi)">EDITAIS</span></h1>
+        <p>Concursos policiais no nosso radar — editais abertos, previstos e encerrados.
+          Dados atualizados manualmente. Sempre confira as fontes oficiais antes de qualquer decisão.</p>
+
+        <div class="header-meta">
+          <span class="meta-pill aberto">
+            <span class="meta-dot dot-green"></span>
+            <span id="count-aberto">0</span> Abertos
+          </span>
+          <span class="meta-pill previsto">
+            <span class="meta-dot dot-amber"></span>
+            <span id="count-previsto">0</span> Previstos
+          </span>
+          <span class="meta-pill encerrado">
+            <span class="meta-dot dot-muted"></span>
+            <span id="count-encerrado">0</span> Encerrados
+          </span>
+        </div>
+
+        <div class="update-info">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+          </svg>
+          Última atualização manual: <strong style="color:var(--text);margin-left:4px;">Jun 2026</strong>
+          &nbsp;·&nbsp; Dados meramente informativos — consulte sempre o edital oficial.
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════
+       FILTROS
+       ══════════════════════════════ -->
+  <div class="filters-bar z1">
+    <div class="container filters-inner">
+      <div class="chip-group">
+        <button class="chip active-all" data-filter="todos" onclick="setFilter(this,'todos')">Todos</button>
+        <button class="chip" data-filter="aberto"    onclick="setFilter(this,'aberto')">Abertos</button>
+        <button class="chip" data-filter="previsto"  onclick="setFilter(this,'previsto')">Previstos</button>
+        <button class="chip" data-filter="encerrado" onclick="setFilter(this,'encerrado')">Encerrados</button>
+      </div>
+      <div class="search-wrap">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input class="search-input" id="search-input" type="text" placeholder="Buscar cargo, cidade, estado..."/>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       GRID DE EDITAIS
+       ══════════════════════════════ -->
+  <main class="editais-main z1">
+    <div class="container">
+
+      <!-- Aviso de dados manuais -->
+      <div class="notice-bar reveal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        <p><strong>Atenção:</strong> as informações abaixo são atualizadas manualmente e podem conter
+          imprecisões. Datas de inscrição, vagas e salários podem ser alterados pelos órgãos a qualquer
+          momento. <strong>Consulte sempre o edital oficial antes de se inscrever.</strong></p>
+      </div>
+
+      <div class="editais-grid" id="editais-grid">
+
+        <!-- ════════════════════════════════════════════════
+             INSTRUÇÕES DE USO
+             Para adicionar um edital, copie um bloco .edital-card
+             e preencha os atributos:
+               data-status="aberto|previsto|encerrado"
+               data-search="texto para busca em minúsculas"
+             Classes do card: aberto | previsto | encerrado
+             ════════════════════════════════════════════════ -->
+
+        <!-- ── EDITAL 1 — Camboriú ── -->
+        <div class="edital-card aberto reveal"
+             data-status="aberto"
+             data-search="camboriú santa catarina agente trânsito idecan">
+
+          <div class="card-head">
+            <div>
+              <span class="card-organ">Prefeitura Municipal de Camboriú · SC</span>
+              <div class="card-cargo">Agente de Trânsito</div>
+            </div>
+            <span class="status-badge badge-aberto">
+              <span class="s-dot"></span> Aberto
+            </span>
+          </div>
+
+          <div class="card-data">
+            <div class="data-item">
+              <span class="data-label">Banca</span>
+              <span class="data-value">IDECAN</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Vagas</span>
+              <span class="data-value">— <span style="font-size:0.72rem;color:var(--text-muted)">(confirmar)</span></span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Salário</span>
+              <span class="data-value highlight">A confirmar</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Nível</span>
+              <span class="data-value">Médio</span>
+            </div>
+          </div>
+
+          <div class="card-dates">
+            <span class="card-dates-title">// Datas-chave</span>
+            <div class="date-row">
+              <span class="date-event">Publicação do edital</span>
+              <span class="date-val">2026</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Inscrições</span>
+              <span class="date-val">A confirmar</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Prova objetiva</span>
+              <span class="date-val">A confirmar</span>
+            </div>
+            <div class="deadline-bar">
+              <div class="deadline-fill" style="width:40%"></div>
+            </div>
+          </div>
+
+          <div class="card-notes">
+            Edital no radar Mercer. Temos material específico disponível:
+            <em>100 questões inéditas padrão IDECAN</em>, mapeadas para este cargo.
+          </div>
+
+          <div class="card-foot">
+            <div class="card-local">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Camboriú, SC
+            </div>
+            <div class="card-actions">
+              <a href="/catalogo/agente-transito-camboriu-2026" class="btn-edital secondary">Material</a>
+              <a href="#" class="btn-edital primary">Edital oficial</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── EDITAL 2 — Exemplo previsto ── -->
+        <div class="edital-card previsto reveal"
+             data-status="previsto"
+             data-search="paraná pmpr policia militar pm quadro">
+
+          <div class="card-head">
+            <div>
+              <span class="card-organ">Polícia Militar do Paraná · PR</span>
+              <div class="card-cargo">Soldado PM — CFSd</div>
+            </div>
+            <span class="status-badge badge-previsto">
+              <span class="s-dot"></span> Previsto
+            </span>
+          </div>
+
+          <div class="card-data">
+            <div class="data-item">
+              <span class="data-label">Banca</span>
+              <span class="data-value">A definir</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Vagas</span>
+              <span class="data-value">A confirmar</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Salário</span>
+              <span class="data-value highlight">A confirmar</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Nível</span>
+              <span class="data-value">Médio</span>
+            </div>
+          </div>
+
+          <div class="card-dates">
+            <span class="card-dates-title">// Previsão</span>
+            <div class="date-row">
+              <span class="date-event">Previsão de edital</span>
+              <span class="date-val">2026</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Inscrições (est.)</span>
+              <span class="date-val">A definir</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Prova (est.)</span>
+              <span class="date-val">A definir</span>
+            </div>
+            <div class="deadline-bar">
+              <div class="deadline-fill warn" style="width:15%"></div>
+            </div>
+          </div>
+
+          <div class="card-notes">
+            Ciclo anterior encerrado em 2024. Previsão de novo edital para 2026
+            baseada em histórico. <em>Aguardando confirmação oficial.</em>
+          </div>
+
+          <div class="card-foot">
+            <div class="card-local">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Paraná, PR
+            </div>
+            <div class="card-actions">
+              <span class="btn-edital disabled">Material</span>
+              <span class="btn-edital disabled">Sem edital</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── EDITAL 3 — Exemplo previsto 2 ── -->
+        <div class="edital-card previsto reveal"
+             data-status="previsto"
+             data-search="polícia civil paraná pcpr investigador delegado">
+
+          <div class="card-head">
+            <div>
+              <span class="card-organ">Polícia Civil do Paraná · PR</span>
+              <div class="card-cargo">Investigador de Polícia</div>
+            </div>
+            <span class="status-badge badge-previsto">
+              <span class="s-dot"></span> Previsto
+            </span>
+          </div>
+
+          <div class="card-data">
+            <div class="data-item">
+              <span class="data-label">Banca</span>
+              <span class="data-value">A definir</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Vagas</span>
+              <span class="data-value">A confirmar</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Salário</span>
+              <span class="data-value highlight">A confirmar</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Nível</span>
+              <span class="data-value">Superior</span>
+            </div>
+          </div>
+
+          <div class="card-dates">
+            <span class="card-dates-title">// Previsão</span>
+            <div class="date-row">
+              <span class="date-event">Previsão de edital</span>
+              <span class="date-val">2026 / 2027</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Inscrições (est.)</span>
+              <span class="date-val">A definir</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Prova (est.)</span>
+              <span class="date-val">A definir</span>
+            </div>
+            <div class="deadline-bar">
+              <div class="deadline-fill warn" style="width:10%"></div>
+            </div>
+          </div>
+
+          <div class="card-notes">
+            Demanda reprimida de vagas após último concurso em 2021.
+            <em>Aguardando autorização do governo estadual.</em>
+          </div>
+
+          <div class="card-foot">
+            <div class="card-local">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Paraná, PR
+            </div>
+            <div class="card-actions">
+              <span class="btn-edital disabled">Material</span>
+              <span class="btn-edital disabled">Sem edital</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── EDITAL 4 — Exemplo encerrado ── -->
+        <div class="edital-card encerrado reveal"
+             data-status="encerrado"
+             data-search="polícia rodoviária federal prf agente federal">
+
+          <div class="card-head">
+            <div>
+              <span class="card-organ">Polícia Rodoviária Federal · Nacional</span>
+              <div class="card-cargo">Policial Rodoviário Federal</div>
+            </div>
+            <span class="status-badge badge-encerrado">
+              <span class="s-dot"></span> Encerrado
+            </span>
+          </div>
+
+          <div class="card-data">
+            <div class="data-item">
+              <span class="data-label">Banca</span>
+              <span class="data-value">CEBRASPE</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Vagas</span>
+              <span class="data-value">1.500</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Salário</span>
+              <span class="data-value" style="color:var(--text-muted)">R$ 11.540</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Nível</span>
+              <span class="data-value">Superior</span>
+            </div>
+          </div>
+
+          <div class="card-dates">
+            <span class="card-dates-title">// Datas (encerrado)</span>
+            <div class="date-row">
+              <span class="date-event">Inscrições</span>
+              <span class="date-val past">Encerradas</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Prova objetiva</span>
+              <span class="date-val past">Realizada</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Resultado final</span>
+              <span class="date-val past">Publicado</span>
+            </div>
+            <div class="deadline-bar">
+              <div class="deadline-fill" style="width:100%;background:var(--text-muted)"></div>
+            </div>
+          </div>
+
+          <div class="card-notes">
+            Concurso encerrado. Mantido no radar para referência histórica e
+            preparação para próximo ciclo. <em>Aguardar novo edital.</em>
+          </div>
+
+          <div class="card-foot">
+            <div class="card-local">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Nacional
+            </div>
+            <div class="card-actions">
+              <a href="#" class="btn-edital secondary">Histórico</a>
+              <span class="btn-edital disabled">Encerrado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════
+             MODELO VAZIO — copie este bloco para
+             adicionar novos editais na lista.
+             Descomente e preencha os dados.
+        ═══════════════════════════════════════════
+
+        <div class="edital-card [aberto|previsto|encerrado] reveal"
+             data-status="[aberto|previsto|encerrado]"
+             data-search="[texto de busca em minúsculas: cargo cidade estado banca]">
+
+          <div class="card-head">
+            <div>
+              <span class="card-organ">[Órgão] · [UF]</span>
+              <div class="card-cargo">[Cargo]</div>
+            </div>
+            <span class="status-badge badge-[aberto|previsto|encerrado]">
+              <span class="s-dot"></span> [Aberto|Previsto|Encerrado]
+            </span>
+          </div>
+
+          <div class="card-data">
+            <div class="data-item">
+              <span class="data-label">Banca</span>
+              <span class="data-value">[Banca]</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Vagas</span>
+              <span class="data-value">[Nº vagas]</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Salário</span>
+              <span class="data-value highlight">R$ [valor]</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Nível</span>
+              <span class="data-value">[Médio|Superior]</span>
+            </div>
+          </div>
+
+          <div class="card-dates">
+            <span class="card-dates-title">// Datas-chave</span>
+            <div class="date-row">
+              <span class="date-event">Inscrições</span>
+              <span class="date-val">[dd/mm – dd/mm/aaaa]</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Prova objetiva</span>
+              <span class="date-val">[dd/mm/aaaa]</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Resultado</span>
+              <span class="date-val">[dd/mm/aaaa | A definir]</span>
+            </div>
+            <div class="deadline-bar">
+              <div class="deadline-fill [warn|urgent]" style="width:[0–100]%"></div>
+            </div>
+          </div>
+
+          <div class="card-notes">
+            [Observações livres sobre o edital, contexto, material disponível etc.]
+          </div>
+
+          <div class="card-foot">
+            <div class="card-local">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              [Cidade, UF]
+            </div>
+            <div class="card-actions">
+              <a href="[link-material]" class="btn-edital secondary">Material</a>
+              <a href="[link-edital-oficial]" class="btn-edital primary" target="_blank" rel="noopener">Edital oficial</a>
+            </div>
+          </div>
+        </div>
+
+        ═══════════════════════════════════════════ -->
+
+        <!-- Estado vazio (JS mostra quando filtro não retorna nada) -->
+        <div id="empty-state">
+          <div class="empty-icon">🔍</div>
+          <strong>Nenhum edital encontrado</strong>
+          <p>Tente outro termo ou remova o filtro de status.</p>
+        </div>
+
+      </div><!-- /#editais-grid -->
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════
+       FOOTER
+       ══════════════════════════════ -->
+  <footer class="page-footer z1">
+    <div class="container footer-inner">
+      <a href="/index.html" class="footer-logo">
+        <span class="logo-dot"></span>
+        MERCER
+      </a>
+      <div class="footer-links">
+        <a href="/legal.html#privacidade">Privacidade</a>
+        <a href="/legal.html#termos">Termos</a>
+        <a href="/legal.html#licenca">Licença</a>
+        <a href="/index.html">← Hub</a>
+      </div>
+      <span class="footer-copy">© 2026 MERCER · Concursos Policiais</span>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════
+       JAVASCRIPT — filtro + busca + contadores
+       ══════════════════════════════ -->
+  <script>
+    const cards   = () => document.querySelectorAll('.edital-card');
+    const empty   = document.getElementById('empty-state');
+    let activeFilter = 'todos';
+    let searchQuery  = '';
+
+    /* ── Contadores de status ── */
+    function updateCounters() {
+      const all = document.querySelectorAll('.edital-card');
+      let a = 0, p = 0, e = 0;
+      all.forEach(c => {
+        const s = c.dataset.status;
+        if (s === 'aberto')    a++;
+        if (s === 'previsto')  p++;
+        if (s === 'encerrado') e++;
+      });
+      document.getElementById('count-aberto').textContent   = a;
+      document.getElementById('count-previsto').textContent  = p;
+      document.getElementById('count-encerrado').textContent = e;
+    }
+
+    /* ── Filtro ── */
+    window.setFilter = function(btn, filter) {
+      document.querySelectorAll('.chip').forEach(c => {
+        c.className = 'chip';
+      });
+      const map = { todos:'active-all', aberto:'active-aberto', previsto:'active-previsto', encerrado:'active-encerrado' };
+      btn.classList.add(map[filter]);
+      activeFilter = filter;
+      applyFilters();
+    };
+
+    /* ── Busca ── */
+    document.getElementById('search-input').addEventListener('input', e => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      applyFilters();
+    });
+
+    /* ── Aplicar filtros ── */
+    function applyFilters() {
+      let visible = 0;
+      cards().forEach(card => {
+        if (card.id === 'empty-state') return;
+        const status = card.dataset.status || '';
+        const search = (card.dataset.search || '').toLowerCase();
+        const matchF = activeFilter === 'todos' || status === activeFilter;
+        const matchS = search.includes(searchQuery);
+        const show   = matchF && matchS;
+        card.dataset.hidden = show ? 'false' : 'true';
+        if (show) visible++;
+      });
+      empty.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    /* ── Scroll reveal ── */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    /* ── Init ── */
+    updateCounters();
+    applyFilters();
+  </script>
+
+</body>
+</html>
