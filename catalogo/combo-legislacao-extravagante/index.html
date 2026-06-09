@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Facebook Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','2592117757918488');fbq('track','PageView');</script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2592117757918488&ev=PageView&noscript=1"/></noscript>
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>De Candidato a Aprovado. O Caminho Passa por Aqui. | MERCER</title>
+  <meta name="description" content="Legislação Extravagante — o bloco que separa quem passa de quem repete a prova. 8 leis. 160+ questões inéditas comentadas."/>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-icon.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* =====================================================
+       TOKENS — sistema idêntico às demais páginas
+       ===================================================== */
+    :root {
+      --bg:         #080810;
+      --surface:    #0f0f1a;
+      --surface-2:  #141424;
+      --border:     #1e2035;
+      --border-hi:  #2a2d50;
+      --blue:       #1a56db;
+      --blue-hi:    #4d7fe8;
+      --blue-dim:   rgba(26,86,219,0.12);
+      --blue-glow:  rgba(26,86,219,0.3);
+      --red:        #c0392b;
+      --red-hi:     #e74c3c;
+      --red-dim:    rgba(192,57,43,0.12);
+      --red-glow:   rgba(192,57,43,0.35);
+      --green:      #27ae60;
+      --green-hi:   #2ecc71;
+      --green-dim:  rgba(39,174,96,0.12);
+      --amber:      #d97706;
+      --amber-hi:   #f59e0b;
+      --amber-dim:  rgba(217,119,6,0.12);
+      --gold:       #c9a84c;
+      --gold-hi:    #e4c46a;
+      --gold-dim:   rgba(201,168,76,0.12);
+      --gold-glow:  rgba(201,168,76,0.3);
+      --text:       #e8eaf2;
+      --text-mid:   #a0a8c0;
+      --text-muted: #5a6280;
+      --font-d: 'Bebas Neue', sans-serif;
+      --font-b: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: var(--font-b); font-size: 16px; line-height: 1.65;
+      overflow-x: hidden; -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(26,86,219,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(26,86,219,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .z1  { position: relative; z-index: 1; }
+    .wrap      { max-width: 860px;  margin: 0 auto; padding: 0 24px; }
+    .wrap-wide { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+    .wrap-narrow { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Tipo ── */
+    h1,h2,h3,h4 { font-family: var(--font-d); letter-spacing: 0.03em; line-height: 1.05; }
+    h1 { font-size: clamp(3rem, 7vw, 5.5rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    h3 { font-size: 1.5rem; }
+    p  { color: var(--text-mid); }
+    strong { color: var(--text); font-weight: 700; }
+
+    .accent-blue  { color: var(--blue-hi); }
+    .accent-red   { color: var(--red-hi); }
+    .accent-green { color: var(--green-hi); }
+    .accent-gold  { color: var(--gold-hi); }
+
+    .section-label {
+      display: block; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 12px;
+    }
+
+    /* Tags */
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 4px 10px; border: 1px solid;
+    }
+    .tag-red   { color: var(--red-hi);  border-color: var(--red);  background: var(--red-dim); }
+    .tag-blue  { color: var(--blue-hi); border-color: var(--blue); background: var(--blue-dim); }
+    .tag-gold  { color: var(--gold-hi); border-color: var(--gold); background: var(--gold-dim); }
+    .tag-dim   { color: var(--text-muted); border-color: var(--border); }
+
+    hr.div-full  { border: none; height: 2px; background: linear-gradient(to right, var(--blue), var(--red), transparent); }
+    hr.div-short { border: none; width: 48px; height: 2px; background: var(--red); display: block; margin: 16px 0; }
+    hr.div-gold  { border: none; width: 48px; height: 2px; background: var(--gold); display: block; margin: 16px 0; }
+
+    /* ── Botões ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: var(--font-b); font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; text-decoration: none; border: none; cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.2s, background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .btn:active { transform: scale(0.97) !important; }
+
+    .btn-cta {
+      font-size: 1rem; padding: 18px 40px;
+      background: var(--red); color: #fff;
+      clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
+    }
+    .btn-cta:hover { background: var(--red-hi); box-shadow: 0 0 32px var(--red-glow); transform: translateY(-3px); }
+
+    .btn-cta-lg {
+      font-size: 1.1rem; padding: 20px 48px;
+      background: var(--red); color: #fff;
+      clip-path: polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));
+    }
+    .btn-cta-lg:hover { background: var(--red-hi); box-shadow: 0 0 40px var(--red-glow); transform: translateY(-3px); }
+
+    .btn-gold {
+      font-size: 1.1rem; padding: 20px 48px;
+      background: var(--gold); color: #0a0810;
+      clip-path: polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,12px 100%,0 calc(100% - 12px));
+    }
+    .btn-gold:hover { background: var(--gold-hi); box-shadow: 0 0 40px var(--gold-glow); transform: translateY(-3px); }
+
+    .btn-outline {
+      font-size: 0.8rem; padding: 12px 24px;
+      background: transparent; color: var(--text); border: 1px solid var(--border-hi);
+    }
+    .btn-outline:hover { border-color: var(--blue-hi); color: var(--blue-hi); transform: translateY(-2px); }
+
+    .cta-subtext { font-size: 0.72rem; color: var(--text-muted); text-align: center; margin-top: 12px; display: block; }
+
+    @keyframes pulse-red {
+      0%   { box-shadow: 0 0 0 0 var(--red-glow); }
+      70%  { box-shadow: 0 0 0 14px rgba(192,57,43,0); }
+      100% { box-shadow: 0 0 0 0 rgba(192,57,43,0); }
+    }
+    @keyframes pulse-gold {
+      0%   { box-shadow: 0 0 0 0 var(--gold-glow); }
+      70%  { box-shadow: 0 0 0 14px rgba(201,168,76,0); }
+      100% { box-shadow: 0 0 0 0 rgba(201,168,76,0); }
+    }
+    .btn-pulse-red  { animation: pulse-red  2.4s ease infinite; }
+    .btn-pulse-gold { animation: pulse-gold 2.4s ease infinite; }
+    .btn-pulse-red:hover,
+    .btn-pulse-gold:hover { animation: none; }
+
+    /* ── Topnav ── */
+    .topnav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(8,8,16,0.95); backdrop-filter: blur(14px);
+    }
+    .topnav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px; border-bottom: 1px solid var(--border); padding: 0 24px;
+    }
+    .topnav-stripe { height: 2px; background: linear-gradient(to right, var(--blue), var(--red)); }
+    .topnav-logo {
+      font-family: var(--font-d); font-size: 1.3rem; letter-spacing: 0.08em;
+      color: var(--text); text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .logo-dot { width: 7px; height: 7px; background: var(--red); flex-shrink: 0; }
+    .topnav-right { display: flex; align-items: center; gap: 16px; }
+    .topnav-price {
+      font-family: var(--font-d); font-size: 1.35rem; color: var(--text);
+      display: flex; align-items: baseline; gap: 6px;
+    }
+    .topnav-price s { font-size: 0.82rem; color: var(--text-muted); font-family: var(--font-b); font-style: normal; }
+    @media (max-width: 600px) { .topnav-price { display: none; } }
+
+    /* =====================================================
+       HERO — presente dolorido, curto, sem enrolação
+       ===================================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 110px 0 80px;
+      position: relative; overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Texto fantasma de fundo */
+    .hero-ghost {
+      position: absolute; bottom: -20px; right: -10px;
+      font-family: var(--font-d);
+      font-size: clamp(6rem, 16vw, 14rem);
+      line-height: 1; white-space: nowrap;
+      color: rgba(192,57,43,0.035);
+      pointer-events: none; user-select: none;
+    }
+
+    /* Linha de status — estilo terminal */
+    .hero-status {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 32px;
+    }
+    .status-line {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-muted);
+    }
+    .status-sep { width: 24px; height: 1px; background: var(--border); }
+
+    .hero h1 { color: var(--text); margin-bottom: 0; }
+
+    /* Linha divisória vermelha entre o "problema" e a saída */
+    .hero-pivot {
+      display: flex; align-items: center; gap: 16px;
+      margin: 28px 0;
+    }
+    .hero-pivot-line { flex: 1; height: 1px; background: var(--border); }
+    .hero-pivot-dot  { width: 8px; height: 8px; background: var(--red); flex-shrink: 0; }
+
+    /* Subtítulo — pivot para o futuro */
+    .hero-future {
+      font-family: var(--font-d);
+      font-size: clamp(2.8rem, 4vw, 3rem);
+      color: var(--gold-hi);
+      letter-spacing: 0.04em; line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-deck {
+      font-size: 1.05rem; color: var(--text-mid);
+      line-height: 1.8; max-width: 600px; margin-bottom: 40px;
+    }
+
+    .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+    /* Números rápidos abaixo do CTA */
+    .hero-numbers {
+      display: flex; gap: 0;
+      margin-top: 52px;
+      border: 1px solid var(--border);
+    }
+    .hero-num-cell {
+      flex: 1; padding: 20px 24px; text-align: center;
+      border-right: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .hero-num-cell:last-child { border-right: none; }
+    .hero-num-cell:hover { background: var(--surface); }
+    .num-val   { font-family: var(--font-d); font-size: 2.2rem; line-height: 1; display: block; color: var(--text); }
+    .num-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-top: 4px; display: block; }
+    @media (max-width: 560px) { .hero-numbers { flex-wrap: wrap; } .hero-num-cell { min-width: 50%; } }
+
+    /* =====================================================
+       SEÇÃO DE IDENTIDADE — quem você se torna
+       ===================================================== */
+    .identity-section {
+      padding: 96px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    /* Glow dourado ambiental */
+    .identity-section::before {
+      content: '';
+      position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 500px; pointer-events: none;
+      background: radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 70%);
+    }
+
+    /* Grid de identidade — traços do policial aprovado */
+    .identity-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      background: var(--border); border: 1px solid var(--border);
+      margin-top: 52px;
+    }
+    @media (max-width: 640px) { .identity-grid { grid-template-columns: 1fr; } }
+
+    .identity-cell {
+      background: var(--surface); padding: 36px 32px;
+      position: relative; overflow: hidden;
+      transition: background 0.2s;
+    }
+    .identity-cell:hover { background: var(--surface-2); }
+
+    /* Número ordinal em marca d'água */
+    .id-watermark {
+      position: absolute; bottom: -12px; right: 16px;
+      font-family: var(--font-d); font-size: 5rem; line-height: 1;
+      color: rgba(201,168,76,0.05); pointer-events: none; user-select: none;
+    }
+
+    .id-icon {
+      width: 40px; height: 40px; margin-bottom: 18px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--gold); background: var(--gold-dim); color: var(--gold-hi);
+    }
+    .identity-cell h3 { font-family: var(--font-d); font-size: 1.4rem; margin-bottom: 10px; }
+    .identity-cell p  { font-size: 0.88rem; line-height: 1.75; color: var(--text-muted); }
+
+    /* Citação destaque — linha inteira */
+    .identity-quote {
+      grid-column: 1 / -1;
+      background: var(--bg); border-top: 1px solid var(--border);
+      padding: 36px 32px;
+      display: flex; align-items: flex-start; gap: 24px;
+    }
+    .quote-bar { width: 3px; flex-shrink: 0; align-self: stretch; background: var(--gold); }
+    .identity-quote blockquote {
+      font-family: var(--font-d);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      color: var(--text); line-height: 1.3;
+      letter-spacing: 0.02em;
+      font-style: normal;
+    }
+    .identity-quote cite {
+      display: block; margin-top: 12px;
+      font-family: var(--font-b); font-size: 0.75rem;
+      font-style: normal; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* =====================================================
+       SLOT DE IMAGEM 1 — pertencimento / farda / glória
+       ===================================================== */
+    .img-slot-1 {
+      position: relative;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+    /* Placeholder — remova o bloco inteiro quando tiver a imagem */
+    .img-placeholder {
+      width: 100%; min-height: 420px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 12px;
+      border: 2px dashed var(--border-hi);
+    }
+    .img-placeholder-icon  { color: var(--text-muted); opacity: 0.4; }
+    .img-placeholder-label {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-muted);
+    }
+    .img-placeholder-hint  { font-size: 0.78rem; color: var(--text-muted); opacity: 0.6; max-width: 320px; text-align: center; }
+    /* ── Para usar a imagem, substitua o bloco .img-placeholder por:
+       <img src="sua-imagem.jpg" alt="descrição"
+            style="width:100%;height:480px;object-fit:cover;display:block;"/>
+       ── */
+
+    /* Legenda sobreposta (opcional, aparece sobre a imagem) */
+    .img-caption-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 24px 32px;
+      background: linear-gradient(to top, rgba(8,8,16,0.9) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .img-caption-text {
+      font-family: var(--font-d); font-size: 1.1rem;
+      color: var(--text); letter-spacing: 0.06em;
+    }
+
+    /* =====================================================
+       OBSTÁCULOS — dores em tom de "isso tem solução"
+       ===================================================== */
+    .obstacles-section { padding: 96px 0; }
+
+    .obstacles-list {
+      margin-top: 48px;
+      border: 1px solid var(--border);
+    }
+    .obstacle-row {
+      display: grid; grid-template-columns: 56px 1fr auto;
+      align-items: start; gap: 0;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .obstacle-row:last-child { border-bottom: none; }
+    .obstacle-row:hover { background: var(--surface); }
+
+    .obstacle-num {
+      padding: 24px 0 24px 24px;
+      font-family: var(--font-d); font-size: 1.8rem; color: var(--border-hi);
+      line-height: 1; align-self: center;
+    }
+    .obstacle-body { padding: 20px 24px; }
+    .obstacle-title { font-weight: 700; font-size: 0.92rem; color: var(--text); margin-bottom: 6px; }
+    .obstacle-desc  { font-size: 0.85rem; color: var(--text-muted); line-height: 1.65; }
+    .obstacle-solve {
+      padding: 20px 24px 20px 0;
+      align-self: center; white-space: nowrap;
+    }
+    .solve-badge {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 4px 10px;
+      border: 1px solid var(--green); background: var(--green-dim); color: var(--green-hi);
+    }
+
+    @media (max-width: 600px) {
+      .obstacle-row { grid-template-columns: 40px 1fr; }
+      .obstacle-solve { display: none; }
+      .obstacle-num { padding: 20px 0 20px 16px; font-size: 1.4rem; }
+      .obstacle-body { padding: 16px; }
+    }
+
+    /* =====================================================
+       PRODUTO — a ponte entre os dois mundos
+       ===================================================== */
+    .product-section {
+      padding: 96px 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Layout split: texto | preço — sem grade extra */
+    .product-split {
+      display: grid; grid-template-columns: 1fr 300px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      margin-top: 48px;
+      position: relative;
+    }
+    .product-split::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(to right, var(--blue), var(--gold));
+    }
+    @media (max-width: 760px) { .product-split { grid-template-columns: 1fr; } }
+
+    .product-body {
+      padding: 40px 36px;
+      border-right: 1px solid var(--border);
+    }
+    @media (max-width: 760px) { .product-body { border-right: none; border-bottom: 1px solid var(--border); } }
+
+    .product-eyebrow {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--blue-hi); margin-bottom: 8px; display: block;
+    }
+    .product-title {
+      font-family: var(--font-d); font-size: 2rem; line-height: 1.1;
+      color: var(--text); margin-bottom: 16px;
+    }
+    .product-desc { font-size: 0.92rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 28px; }
+
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.88rem; color: var(--text-mid);
+    }
+    .chk {
+      width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;
+      background: var(--green-dim); border: 1px solid var(--green);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green-hi); font-size: 0.65rem; font-weight: 900;
+    }
+
+    .product-aside {
+      padding: 40px 28px;
+      background: var(--surface-2);
+      display: flex; flex-direction: column; justify-content: center; gap: 20px;
+    }
+    .price-stack { display: flex; flex-direction: column; gap: 4px; }
+    .price-was  { font-size: 0.82rem; color: var(--text-muted); text-decoration: line-through; }
+    .price-now  { font-family: var(--font-d); font-size: 3rem; color: var(--text); line-height: 1; }
+    .price-note { font-size: 0.72rem; color: var(--text-muted); }
+
+    .aside-trust { display: flex; flex-direction: column; gap: 8px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .trust-row-item { display: flex; align-items: center; gap: 8px; font-size: 0.74rem; color: var(--text-muted); }
+    .trust-row-item svg { color: var(--green-hi); flex-shrink: 0; }
+
+    /* =====================================================
+       SLOT DE IMAGEM 2 — mockup do produto / material
+       ===================================================== */
+    .img-slot-2 {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      position: relative; overflow: hidden;
+    }
+
+    /* =====================================================
+       LEIS — grade 4×2 compacta
+       ===================================================== */
+    .leis-section {
+      padding: 96px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .leis-grid {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); margin-top: 52px;
+    }
+    @media (max-width: 860px) { .leis-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 480px) { .leis-grid { grid-template-columns: 1fr; } }
+
+    .lei-card {
+      background: var(--surface); padding: 24px 20px;
+      display: flex; flex-direction: column; gap: 8px;
+      position: relative; transition: background 0.2s;
+    }
+    .lei-card:hover { background: var(--surface-2); }
+    .lei-card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: var(--border); transition: background 0.2s;
+    }
+    .lei-card:hover::before { background: var(--gold); }
+
+    .lei-num  { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-hi); }
+    .lei-name { font-family: var(--font-d); font-size: 1.05rem; color: var(--text); line-height: 1.2; }
+    .lei-ref  { font-size: 0.72rem; color: var(--text-muted); line-height: 1.5; }
+    .lei-count {
+      display: inline-flex; align-items: center; gap: 4px; margin-top: 4px;
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 3px 8px; border: 1px solid var(--amber); background: var(--amber-dim); color: var(--amber-hi);
+      width: fit-content;
+    }
+
+    /* Bônus IA */
+    .bonus-ia {
+      margin-top: 16px;
+      border: 1px solid var(--border); border-left: 3px solid var(--amber);
+      background: var(--bg); padding: 24px 28px;
+      display: flex; align-items: flex-start; gap: 18px;
+    }
+    .bonus-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--amber-dim); border: 1px solid var(--amber);
+      display: flex; align-items: center; justify-content: center; color: var(--amber-hi);
+    }
+    .bonus-eyebrow { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber-hi); display: block; margin-bottom: 4px; }
+    .bonus-name    { font-family: var(--font-d); font-size: 1.2rem; color: var(--text); display: block; margin-bottom: 6px; }
+    .bonus-desc    { font-size: 0.84rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* =====================================================
+       DEPOIMENTOS
+       ===================================================== */
+    .testi-section { padding: 96px 0; border-top: 1px solid var(--border); }
+
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 16px; margin-top: 52px;
+    }
+    @media (max-width: 860px) { .testi-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 540px) { .testi-grid { grid-template-columns: 1fr; } }
+
+    .testi-card {
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 28px; position: relative;
+    }
+    .testi-card::before {
+      content: '"'; position: absolute; top: 12px; right: 18px;
+      font-family: var(--font-d); font-size: 4rem; line-height: 1;
+      color: var(--border-hi); pointer-events: none;
+    }
+    .testi-stars  { color: var(--amber-hi); font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .testi-text   { font-size: 0.88rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 20px; }
+    .testi-author { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); }
+    .testi-role   { font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; }
+    .testi-badge  { display: inline-block; margin-top: 8px; }
+
+    .testi-featured {
+      grid-column: span 2;
+      background: var(--surface-2); border: 1px solid var(--gold);
+      padding: 36px; position: relative; overflow: hidden;
+    }
+    .testi-featured::before {
+      content: '"'; position: absolute; top: -10px; right: 20px;
+      font-family: var(--font-d); font-size: 8rem; line-height: 1;
+      color: rgba(201,168,76,0.06); pointer-events: none;
+    }
+    .testi-featured .testi-text { font-size: 1rem; color: var(--text); line-height: 1.8; }
+    @media (max-width: 860px) { .testi-featured { grid-column: span 1; } }
+
+    /* =====================================================
+       SLOT DE IMAGEM 3 — aprovados / celebração
+       ===================================================== */
+    .img-slot-3 {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      position: relative; overflow: hidden;
+    }
+
+    /* =====================================================
+       GARANTIA
+       ===================================================== */
+    .guarantee-section { padding: 72px 0; }
+    .guarantee-box {
+      border: 1px solid var(--border); background: var(--surface);
+      padding: 48px; display: flex; gap: 40px; align-items: flex-start;
+      position: relative; overflow: hidden;
+    }
+    .guarantee-box::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(to right, var(--green), var(--green-hi));
+    }
+    @media (max-width: 640px) { .guarantee-box { flex-direction: column; gap: 24px; padding: 32px 24px; } }
+
+    .guarantee-seal {
+      width: 96px; height: 96px; flex-shrink: 0;
+      background: var(--green-dim); border: 2px solid var(--green);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .seal-days  { font-family: var(--font-d); font-size: 2.2rem; color: var(--green-hi); line-height: 1; }
+    .seal-label { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-hi); margin-top: 2px; }
+    .guarantee-text h3 { font-family: var(--font-d); font-size: 1.8rem; margin-bottom: 12px; }
+    .guarantee-text p  { font-size: 0.92rem; line-height: 1.8; }
+
+    /* =====================================================
+       FAQ
+       ===================================================== */
+    .faq-section { padding: 96px 0; background: var(--surface); border-top: 1px solid var(--border); }
+    .faq-list { border-top: 1px solid var(--border); margin-top: 48px; }
+    details.faq-item { border-bottom: 1px solid var(--border); }
+    details.faq-item summary {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 0; font-weight: 600; font-size: 0.95rem;
+      cursor: pointer; list-style: none; transition: color 0.15s; gap: 16px;
+    }
+    details.faq-item summary:hover { color: var(--blue-hi); }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    .faq-chevron { width: 18px; height: 18px; flex-shrink: 0; color: var(--text-muted); transition: transform 0.2s; }
+    details.faq-item[open] summary .faq-chevron { transform: rotate(180deg); }
+    details.faq-item[open] summary { color: var(--blue-hi); }
+    .faq-answer { padding: 0 0 22px; font-size: 0.9rem; color: var(--text-mid); line-height: 1.85; max-width: 680px; }
+
+    /* =====================================================
+       CTA FINAL — 100% focado no futuro
+       ===================================================== */
+    .cta-final {
+      padding: 112px 24px;
+      text-align: center; position: relative; overflow: hidden;
+      border-top: 1px solid var(--border);
+    }
+    .cta-final::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse at 50% 60%, rgba(201,168,76,0.07) 0%, transparent 65%);
+    }
+
+    /* Palavra fantasma grande de fundo */
+    .cta-ghost {
+      position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
+      font-family: var(--font-d); font-size: clamp(6rem, 18vw, 16rem);
+      color: rgba(201,168,76,0.03); white-space: nowrap;
+      pointer-events: none; user-select: none; line-height: 1;
+    }
+
+    .cta-final h2 { font-size: clamp(2.4rem, 5.5vw, 4.5rem); margin-bottom: 20px; }
+
+    .cta-final .subtitle {
+      max-width: 560px; margin: 0 auto 52px;
+      font-size: 1.05rem; line-height: 1.8;
+    }
+
+    /* Caixa de preço */
+    .price-box {
+      max-width: 460px; margin: 0 auto 48px;
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 36px; position: relative;
+    }
+    .price-box::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(to right, var(--blue), var(--gold));
+    }
+    .price-box-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; display: block; }
+    .price-box-old   { font-size: 1rem; color: var(--text-muted); text-decoration: line-through; display: block; margin-bottom: 4px; }
+    .price-box-now   { font-family: var(--font-d); font-size: 4rem; color: var(--text); line-height: 1; display: block; margin-bottom: 8px; }
+    .price-box-note  { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 28px; display: block; }
+
+    .trust-badges {
+      display: flex; align-items: center; justify-content: center;
+      gap: 24px; flex-wrap: wrap; margin-top: 28px;
+    }
+    .trust-badge { display: flex; align-items: center; gap: 7px; font-size: 0.72rem; color: var(--text-muted); }
+    .trust-badge svg { color: var(--green-hi); flex-shrink: 0; }
+
+    /* ── Footer ── */
+    .lp-footer { padding: 36px 24px; border-top: 1px solid var(--border); text-align: center; }
+    .lp-footer-logo {
+      font-family: var(--font-d); font-size: 1.2rem; letter-spacing: 0.08em;
+      color: var(--text); text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px;
+    }
+    .lp-footer-links { display: flex; justify-content: center; gap: 4px; flex-wrap: wrap; margin-bottom: 16px; }
+    .lp-footer-links a {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); text-decoration: none; padding: 0 8px;
+      border-right: 1px solid var(--border); transition: color 0.15s;
+    }
+    .lp-footer-links a:last-child { border-right: none; }
+    .lp-footer-links a:hover { color: var(--blue-hi); }
+    .lp-footer-copy { font-size: 0.7rem; color: var(--text-muted); }
+
+    /* ── Scroll reveal ── */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(24px) } to { opacity:1; transform:translateY(0) } }
+    .fu0 { animation: fadeUp 0.6s      ease both; }
+    .fu1 { animation: fadeUp 0.6s 0.1s ease both; }
+    .fu2 { animation: fadeUp 0.6s 0.2s ease both; }
+    .fu3 { animation: fadeUp 0.6s 0.32s ease both; }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .cursor { display:inline-block; width:4px; height:0.85em; background:var(--red); animation:blink 1s step-end infinite; vertical-align:middle; margin-left:4px; }
+
+    .reveal { opacity:0; transform:translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    @media (max-width: 768px) {
+      .hero { min-height: auto; padding: 96px 0 60px; }
+      .hero-cta-row { flex-direction: column; }
+      .hero-cta-row .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       TOPNAV
+       ══════════════════════════════════════ -->
+  <nav class="topnav z1">
+    <div class="topnav-inner">
+      <a href="/index.html" class="topnav-logo">
+        <span class="logo-dot"></span>
+        MERCER
+      </a>
+      <div class="topnav-right">
+        <div class="topnav-price">
+          <s>R$ XX,XX</s>
+          R$ XX,XX
+        </div>
+        <a href="#comprar" class="btn btn-cta" style="padding:10px 22px;font-size:0.72rem;">
+          Quero o caderno
+        </a>
+      </div>
+    </div>
+    <div class="topnav-stripe"></div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       HERO — presente, pivô, futuro
+       ══════════════════════════════════════ -->
+  <section class="hero z1">
+    <div class="hero-ghost">APROVADO</div>
+    <div class="wrap">
+
+      <div class="hero-status fu0">
+        <span class="tag tag-red">Legislação Extravagante</span>
+        <span class="status-sep"></span>
+        <span class="status-label">8 leis · 200+ questões comentadas</span>
+      </div>
+
+      <!-- Presente direto -->
+      <h1 class="fu1">
+        HOJE VOCÊ<br>
+        É CANDIDATO<span class="cursor"></span>
+      </h1>
+
+      <!-- Pivô visual -->
+      <div class="hero-pivot fu2">
+        <div class="hero-pivot-line"></div>
+        <div class="hero-pivot-dot"></div>
+        <div class="hero-pivot-line"></div>
+      </div>
+
+      <!-- Futuro almejado — em ouro -->
+      <div class="hero-future fu2">
+        AMANHÃ VOCÊ<br>
+        PODE SER POLICIAL.
+      </div>
+
+      <p class="hero-deck fu3">
+        A distância entre os dois não é talento.
+        É <strong>legislação extravagante — o bloco que separa quem passa de quem repete a prova.</strong>
+        Lei de Drogas, ECA, Maria da Penha, Hediondos, Desarmamento.
+        Cada uma com lógica própria. Cada uma pronta para reprovar quem estudou de passagem.
+      </p>
+
+      <div class="hero-cta-row fu3">
+        <a href="#comprar" class="btn btn-gold btn-pulse-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Quero cruzar essa linha
+        </a>
+        <a href="#obstaculos" class="btn btn-outline">Ver o que está no caminho</a>
+      </div>
+
+      <div class="hero-numbers fu3">
+        <div class="hero-num-cell">
+          <span class="num-val">8</span>
+          <span class="num-label">Leis abordadas</span>
+        </div>
+        <div class="hero-num-cell">
+          <span class="num-val">200<span style="color:var(--gold-hi)">+</span></span>
+          <span class="num-label">Questões Comentadas</span>
+        </div>
+        <div class="hero-num-cell">
+          <span class="num-val">30</span>
+          <span class="num-label">Por lei</span>
+        </div>
+        <div class="hero-num-cell">
+          <span class="num-val">7</span>
+          <span class="num-label">Dias de garantia</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="div-full z1"/>
+
+  <!-- ══════════════════════════════════════
+       IDENTIDADE — quem você se torna
+       ══════════════════════════════════════ -->
+  <section class="identity-section z1">
+    <div class="wrap">
+      <span class="section-label reveal">// O que a aprovação significa</span>
+      <h2 class="reveal">O POLICIAL QUE<br><span class="accent-gold">VOCÊ VAI SER</span></h2>
+      <p class="reveal" style="margin-top:14px;max-width:580px;">
+        Aprovação não é só um número no gabarito. É uma identidade nova. Isso é o que você está construindo.
+      </p>
+
+      <div class="identity-grid reveal">
+
+        <div class="identity-cell">
+          <span class="id-watermark">01</span>
+          <div class="id-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Autoridade legítima</h3>
+          <p>Você vai aplicar a lei porque a conhece — não porque decorou artigos, mas porque entende a lógica por trás de cada norma. Isso faz diferença na rua, não só na prova.</p>
+        </div>
+
+        <div class="identity-cell">
+          <span class="id-watermark">02</span>
+          <div class="id-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Pertencimento a uma corporação</h3>
+          <p>Existe um grupo de pessoas que passou, que veste farda, que tem estabilidade e missão. Você está tentando entrar nesse grupo. O caderno é parte do caminho até lá.</p>
+        </div>
+
+        <div class="identity-cell">
+          <span class="id-watermark">03</span>
+          <div class="id-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Estabilidade conquistada</h3>
+          <p>Concurso público é um dos poucos caminhos onde o esforço tem retorno garantido — e duradouro. Aprovação em carreira policial é estabilidade para a vida inteira.</p>
+        </div>
+
+        <div class="identity-cell">
+          <span class="id-watermark">04</span>
+          <div class="id-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="8" r="6"/>
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </div>
+          <h3>A última vez na fila do candidato</h3>
+          <p>Cada prova reprovada é mais um ciclo de espera, mais um edital, mais uma taxa de inscrição. Passar significa sair definitivamente desse ciclo.</p>
+        </div>
+
+        <!-- Citação destaque -->
+        <div class="identity-quote">
+          <div class="quote-bar"></div>
+          <div>
+            <blockquote>
+              A farda não é vestida no dia da posse.<br>
+              É conquistada no dia em que você decidiu<br>
+              <span style="color:var(--gold-hi)">estudar com seriedade.</span>
+            </blockquote>
+            <cite>— Mentalidade do candidato que passa</cite>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SLOT IMAGEM 1 — pertencimento / farda
+       Remova o bloco .img-placeholder e substitua
+       por <img> quando tiver o arquivo.
+       ══════════════════════════════════════ -->
+  <div class="img-slot-1 z1">
+    <div class="img-placeholder">
+      <svg class="img-placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      <span class="img-placeholder-label">// Imagem 1 — Pertencimento</span>
+      <span class="img-placeholder-hint">Sugestão: policial fardado, cerimônia de formatura, símbolo de corporação ou imagem de autoridade</span>
+    </div>
+    <!-- Legenda opcional — remova se não quiser -->
+    <div class="img-caption-overlay">
+      <span class="img-caption-text">// O destino que justifica o esforço</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       OBSTÁCULOS — o que está no caminho
+       ══════════════════════════════════════ -->
+  <section class="obstacles-section z1" id="obstaculos">
+    <div class="wrap">
+      <span class="section-label reveal">// O que está entre você e a aprovação</span>
+      <h2 class="reveal">OBSTÁCULOS<br><span class="accent-blue">COM SOLUÇÃO</span></h2>
+      <p class="reveal" style="margin-top:14px;max-width:580px;">
+        Não são problemas sem saída. São problemas de ferramenta — e ferramenta se troca.
+      </p>
+
+      <div class="obstacles-list reveal">
+
+        <div class="obstacle-row">
+          <span class="obstacle-num">01</span>
+          <div class="obstacle-body">
+            <div class="obstacle-title">O cursinho passa por 8 leis em 2 horas</div>
+            <div class="obstacle-desc">Visão geral que não prepara para nada. Na prova, cada lei aparece com pegadinhas próprias e detalhes que a passagem rápida nunca tocou.</div>
+          </div>
+          <div class="obstacle-solve"><span class="solve-badge">Resolvido</span></div>
+        </div>
+
+        <div class="obstacle-row">
+          <span class="obstacle-num">02</span>
+          <div class="obstacle-body">
+            <div class="obstacle-title">Questões recicladas de 2010 não preparam para 2026</div>
+            <div class="obstacle-desc">Legislação muda. O formato das bancas muda. Banco de questões antigo é treinar para uma prova que não existe mais.</div>
+          </div>
+          <div class="obstacle-solve"><span class="solve-badge">Resolvido</span></div>
+        </div>
+
+        <div class="obstacle-row">
+          <span class="obstacle-num">03</span>
+          <div class="obstacle-body">
+            <div class="obstacle-title">Gabarito que repete o artigo não explica o erro</div>
+            <div class="obstacle-desc">Você erra, vê que é a letra C, continua sem entender por que as outras quatro alternativas estavam erradas. Próxima questão parecida — mesmo erro.</div>
+          </div>
+          <div class="obstacle-solve"><span class="solve-badge">Resolvido</span></div>
+        </div>
+
+        <div class="obstacle-row">
+          <span class="obstacle-num">04</span>
+          <div class="obstacle-body">
+            <div class="obstacle-title">Cada lei tem sua própria lógica — e a maioria confunde</div>
+            <div class="obstacle-desc">A Lei de Drogas pensa diferente do ECA. A Maria da Penha tem competência própria. Estudar tudo misturado é a receita para errar nas questões que mais discriminam candidatos.</div>
+          </div>
+          <div class="obstacle-solve"><span class="solve-badge">Resolvido</span></div>
+        </div>
+
+        <div class="obstacle-row">
+          <span class="obstacle-num">05</span>
+          <div class="obstacle-body">
+            <div class="obstacle-title">Legislação extravagante pode ser 20%–30% da sua prova</div>
+            <div class="obstacle-desc">Não é detalhe. É um bloco inteiro — e a maioria dos candidatos entra nele sem treino específico, deixando pontos preciosos na mesa.</div>
+          </div>
+          <div class="obstacle-solve"><span class="solve-badge">Resolvido</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="div-full z1"/>
+
+  <!-- ══════════════════════════════════════
+       PRODUTO — a ponte
+       ══════════════════════════════════════ -->
+  <section class="product-section z1">
+    <div class="wrap">
+      <span class="section-label reveal">// A ponte entre candidato e aprovado</span>
+      <h2 class="reveal">O MATERIAL QUE<br><span class="accent-gold">FECHA O BURACO</span></h2>
+      <p class="reveal" style="margin-top:14px;max-width:580px;">
+        Não é um cursinho. Não é uma apostila genérica. É treino específico — lei por lei, questão por questão, comentário por comentário.
+      </p>
+
+      <div class="product-split reveal">
+        <div class="product-body">
+          <span class="product-eyebrow">Legislação Extravagante · Concursos Policiais · 2025/2026</span>
+          <div class="product-title">Caderno de Questões Inéditas — Legislação Especial</div>
+          <p class="product-desc">
+            160 questões distribuídas em 8 leis + questões originais adicionais.
+            Cada questão comentada com o raciocínio do examinador —
+            não só o gabarito, mas o porquê de cada distrator estar errado.
+            Você para de adivinhar e começa a raciocinar como a banca.
+          </p>
+          <ul class="checklist">
+            <li><span class="chk">✓</span> 20 questões inéditas por lei — pontos de maior incidência em bancas policiais</li>
+            <li><span class="chk">✓</span> Questões originais IA — cenários práticos que testam compreensão real</li>
+            <li><span class="chk">✓</span> Comentários que destroem cada distrator — você aprende com o erro</li>
+            <li><span class="chk">✓</span> Legislação na versão atual — com alterações mais recentes incorporadas</li>
+            <li><span class="chk">✓</span> PDF para celular, tablet ou desktop — download offline disponível</li>
+            <li><span class="chk">✓</span> Serve para qualquer concurso policial que cobre legislação extravagante</li>
+          </ul>
+        </div>
+
+        <div class="product-aside">
+          <div class="price-stack">
+            <span class="price-was">De R$ XX,XX</span>
+            <span class="price-now">R$ XX,XX</span>
+            <span class="price-note">ou X× de R$ X,XX no cartão</span>
+          </div>
+          <a href="#" class="btn btn-gold btn-pulse-gold" style="width:100%;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Cruzar essa linha
+          </a>
+          <span class="cta-subtext">Acesso imediato · PIX, cartão ou boleto</span>
+          <div class="aside-trust">
+            <div class="trust-row-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Compra 100% segura via Kiwify
+            </div>
+            <div class="trust-row-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              7 dias de garantia integral
+            </div>
+            <div class="trust-row-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07"/></svg>
+              Suporte por e-mail em até 24h
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SLOT IMAGEM 2 — material / mockup PDF
+       Substitua .img-placeholder por <img> quando pronto.
+       ══════════════════════════════════════ -->
+  <div class="img-slot-2 z1">
+    <div class="img-placeholder">
+      <svg class="img-placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      <span class="img-placeholder-label">// Imagem 2 — Produto / Mockup</span>
+      <span class="img-placeholder-hint">Sugestão: mockup do PDF em tablet/celular, capa do caderno ou material aberto em destaque</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       LEIS ABORDADAS
+       ══════════════════════════════════════ -->
+  <section class="leis-section z1">
+    <div class="wrap-wide">
+      <div class="wrap" style="padding:0;">
+        <span class="section-label reveal">// Cobertura completa</span>
+        <h2 class="reveal">AS 8 LEIS QUE<br><span class="accent-blue">MAIS REPROVAM</span></h2>
+        <p class="reveal" style="margin-top:14px;max-width:580px;">
+          Cada lei treinada com questões próprias — não misturadas, não comprimidas. A lógica de cada uma fica clara antes de avançar para a próxima.
+        </p>
+      </div>
+
+      <div class="leis-grid reveal">
+
+        <div class="lei-card">
+          <span class="lei-num">01 // 11.343/2006</span>
+          <span class="lei-name">Lei de Drogas</span>
+          <span class="lei-ref">Tráfico, uso, penas, procedimentos e política nacional sobre drogas</span>
+          <span class="lei-count">20 questões</span>
+        </div>
+
+        <div class="lei-card">
+          <span class="lei-num">02 // 13.869/2019</span>
+          <span class="lei-name">Abuso de Autoridade</span>
+          <span class="lei-ref">Crimes, sujeitos ativos, dolo específico, sanções e condutas típicas</span>
+          <span class="lei-count">20 questões</span>
+        </div>
+
+        <div class="lei-card">
+          <span class="lei-num">03 // 8.069/1990</span>
+          <span class="lei-name">ECA</span>
+          <span class="lei-ref">Direitos da criança, medidas socioeducativas, crimes e procedimentos</span>
+          <span class="lei-count">20 questões</span>
+        </div>
+
+        <div class="lei-card">
+          <span class="lei-num">04 // 11.340/2006</span>
+          <span class="lei-name">Lei Maria da Penha</span>
+          <span class="lei-ref">Violência doméstica, medidas protetivas, competência e rito processual</span>
+          <span class="lei-count">20 questões</span>
+        </div>
+
+        <div class="lei-card">
+          <span class="lei-num">05 // 12.850/2013</span>
+          <span class="lei-name">Organização Criminosa</span>
+          <span class="lei-ref">Conceito legal, meios de obtenção de prova e colaboração premiada</span>
+          <span class="lei-count">20 questões</span>
+        </div>
+
+        <div class="lei-card">
+          <span class="lei-num">06 // 7.716/1989</span>
+          <span class="lei-name">Crimes de Raça ou Cor</span>
+          <span class="lei-ref">Condutas típicas, hediondez e distinção de injúria racial qualificada</span>
+          <span class="lei-count">20 questões</span>
+        </div>
+
+        <div class="lei-card">
+          <span class="lei-num">07 // 8.072/1990</span>
+          <span class="lei-name">Crimes Hediondos</span>
+          <span class="lei-ref">Rol taxativo, vedações constitucionais, regime e liberdade provisória</span>
+          <span class="lei-count">20 questões</span>
+        </div>
+
+        <div class="lei-card">
+          <span class="lei-num">08 // 10.826/2003</span>
+          <span class="lei-name">Estatuto do Desarmamento</span>
+          <span class="lei-ref">Porte, posse ilegal, crimes, apreensão e competência jurisdicional</span>
+          <span class="lei-count">20 questões</span>
+        </div>
+
+      </div>
+
+      <div class="bonus-ia reveal">
+        <div class="bonus-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M22 2 12 12"/>
+          </svg>
+        </div>
+        <div>
+          <span class="bonus-eyebrow">// Questões Originais IA</span>
+          <span class="bonus-name">Situações-Problema Inéditas</span>
+          <span class="bonus-desc">Além das 160 questões principais, o caderno inclui questões autorais elaboradas com IA generativa — cenários práticos que testam a compreensão real da legislação, não apenas memorização de artigos. Exatamente o que bancas mais sofisticadas estão fazendo.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       DEPOIMENTOS
+       ══════════════════════════════════════ -->
+  <section class="testi-section z1">
+    <div class="wrap-wide">
+      <div class="wrap" style="padding:0;">
+        <span class="section-label reveal">// Quem já cruzou a linha</span>
+        <h2 class="reveal">DE CANDIDATO<br><span class="accent-gold">A APROVADO</span></h2>
+      </div>
+
+      <div class="testi-grid reveal">
+
+        <!-- Destaque — borda dourada -->
+        <div class="testi-card testi-featured">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            Fiz dois concursos com apostila genérica e a Legislação Extravagante sempre me reprovava. Eu entendia "por cima" e na hora da prova errava os detalhes que fazem diferença. Depois do caderno Mercer percebi que não era falta de estudo — era falta de treino específico. Passei no terceiro concurso.
+          </p>
+          <div class="testi-author">Nome do Aprovado</div>
+          <div class="testi-role">Aprovado · Carreira Policial · [ano]</div>
+          <span class="testi-badge tag tag-gold">✓ Aprovado</span>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            A Lei de Drogas era meu maior fantasma. Depois de 20 questões comentadas, virou minha matéria mais segura. Isso não acontece por acaso — é a qualidade do comentário.
+          </p>
+          <div class="testi-author">Nome do Aprovado</div>
+          <div class="testi-role">Aprovado · [Cargo] · [ano]</div>
+          <span class="testi-badge tag tag-green">✓ Aprovado</span>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            Entrei na prova sem surpresa nas questões de legislação especial. Essa segurança — de já ter visto aquele raciocínio antes — vale mais do que qualquer teoria.
+          </p>
+          <div class="testi-author">Nome do Aprovado</div>
+          <div class="testi-role">Aprovado · [Cargo] · [ano]</div>
+          <span class="testi-badge tag tag-green">✓ Aprovado</span>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            Resolvi o caderno completo duas vezes. Na segunda rodada, acertei mais de 90%. Nunca tinha chegado tão perto disso com legislação extravagante.
+          </p>
+          <div class="testi-author">Nome do Aprovado</div>
+          <div class="testi-role">Aprovado · [Cargo] · [ano]</div>
+          <span class="testi-badge tag tag-green">✓ Aprovado</span>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">
+            O ECA sempre me travava. Com as 20 questões comentadas, entendi a lógica que a banca segue. Virou a parte que mais me diferenciou dos outros candidatos.
+          </p>
+          <div class="testi-author">Nome do Aprovado</div>
+          <div class="testi-role">Aprovado · [Cargo] · [ano]</div>
+          <span class="testi-badge tag tag-green">✓ Aprovado</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SLOT IMAGEM 3 — aprovados / celebração
+       Substitua .img-placeholder por <img> quando pronto.
+       ══════════════════════════════════════ -->
+  <div class="img-slot-3 z1">
+    <div class="img-placeholder">
+      <svg class="img-placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      <span class="img-placeholder-label">// Imagem 3 — Aprovados / Celebração</span>
+      <span class="img-placeholder-hint">Sugestão: formatura policial, cerimônia de posse, candidato com resultado positivo ou símbolo de conquista</span>
+    </div>
+    <div class="img-caption-overlay">
+      <span class="img-caption-text">// É aqui que o esforço chega</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       GARANTIA
+       ══════════════════════════════════════ -->
+  <section class="guarantee-section z1">
+    <div class="wrap">
+      <div class="guarantee-box reveal">
+        <div class="guarantee-seal">
+          <span class="seal-days">7</span>
+          <span class="seal-label">dias de<br>garantia</span>
+        </div>
+        <div class="guarantee-text">
+          <h3>RISCO <span class="accent-green">ZERO</span> PARA VOCÊ</h3>
+          <hr class="div-short" style="margin:12px 0 16px;background:var(--green);"/>
+          <p>
+            Acesse o material. Resolva as questões, leia os comentários de cada lei.
+            Se em <strong>7 dias</strong> você não estiver convencido de que é o melhor treino
+            de legislação extravagante que já fez, mande um e-mail e devolvemos
+            <strong>100% do valor pago</strong> — sem perguntas, sem burocracia.
+            É a garantia do Código de Defesa do Consumidor e nós honramos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FAQ
+       ══════════════════════════════════════ -->
+  <section class="faq-section z1">
+    <div class="wrap-narrow">
+      <span class="section-label reveal">// Dúvidas frequentes</span>
+      <h2 class="reveal">PERGUNTAS</h2>
+
+      <div class="faq-list reveal">
+
+        <details class="faq-item">
+          <summary>
+            Serve para qualquer concurso policial ou só para um específico?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">Serve para qualquer concurso que cobre legislação extravagante — PF, PRF, PCs estaduais, PMs e carreiras municipais. As 8 leis abordadas aparecem na grande maioria dos editais de carreira policial no Brasil.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            O que são as questões originais IA?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">Questões elaboradas com auxílio de IA generativa — cenários práticos e situações-problema que testam a compreensão real da lei, não apenas a memorização de artigos. Exatamente o estilo que bancas mais modernas estão adotando.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            A legislação está atualizada?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">Sim. Todas as leis estão na versão atual. Se houver alteração legislativa relevante após a publicação, o material é atualizado e quem já comprou recebe a nova versão sem custo adicional.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Como recebo após a compra?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">Imediatamente após a confirmação do pagamento você recebe um e-mail com o link de download. PDF disponível para celular, tablet ou desktop — com acesso offline após o download.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Posso parcelar?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">Sim, em até 10× no cartão de crédito. Também aceitamos PIX e boleto. As formas de pagamento aparecem no checkout da Kiwify.</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Como funciona a garantia de 7 dias?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="faq-answer">Se dentro de 7 dias você não estiver satisfeito, manda um e-mail para mercerquestoes@gmail.com e devolvemos 100% — sem perguntas. É a garantia do CDC e nós honramos.</div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CTA FINAL — 100% futuro almejado
+       ══════════════════════════════════════ -->
+  <section class="cta-final z1" id="comprar">
+    <div class="cta-ghost">APROVADO</div>
+
+    <span class="section-label" style="position:relative;">// Uma decisão. Uma direção.</span>
+
+    <h2 style="position:relative;">
+      DE CANDIDATO<br>
+      <span class="accent-gold">A POLICIAL.</span>
+    </h2>
+
+    <p class="subtitle" style="position:relative;">
+      A farda está do outro lado desta prova.
+      A Legislação Extravagante está no caminho.
+      Você já tem o esforço — agora precisa da ferramenta certa.
+    </p>
+
+    <div class="price-box reveal">
+      <span class="price-box-label">Investimento único</span>
+      <span class="price-box-old">De R$ XX,XX</span>
+      <span class="price-box-now">R$ XX,XX</span>
+      <span class="price-box-note">ou X× de R$ X,XX no cartão · PIX com desconto</span>
+      <a href="#" class="btn btn-gold btn-pulse-gold" style="width:100%;justify-content:center;font-size:1rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Garantir minha vaga agora
+      </a>
+      <span class="cta-subtext" style="margin-top:14px;">
+        Compra 100% segura · Acesso imediato · 7 dias de garantia
+      </span>
+    </div>
+
+    <div class="trust-badges" style="position:relative;">
+      <div class="trust-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Compra segura SSL
+      </div>
+      <div class="trust-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+        Acesso imediato
+      </div>
+      <div class="trust-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        7 dias de garantia
+      </div>
+      <div class="trust-badge">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 13"/></svg>
+        Suporte em até 24h
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="lp-footer z1">
+    <a href="/index.html" class="lp-footer-logo">
+      <span class="logo-dot"></span>
+      MERCER | Concursos Policiais
+    </a>
+    <div class="lp-footer-links">
+      <a href="/legal.html#privacidade">Privacidade</a>
+      <a href="/legal.html#termos">Termos de Uso</a>
+      <a href="/legal.html#licenca">Licença</a>
+      <a href="/index.html">← Ver outros materiais</a>
+    </div>
+    <p class="lp-footer-copy">© 2026 MERCER | Concursos Policiais. Este produto não é afiliado, endossado ou patrocinado por qualquer órgão governamental.</p>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
