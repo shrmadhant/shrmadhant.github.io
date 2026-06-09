@@ -44,6 +44,7 @@
       --blue-hi:    #4d7fe8;
       --blue-glow:  rgba(26,86,219,0.3);
       --green:      #046d1c;
+      --green-glow: rgba(4,109,28,0.3);
       --red:        #c0392b;
       --red-hi:     #e74c3c;
       --red-glow:   rgba(192,57,43,0.35);
@@ -291,6 +292,14 @@
     .link-card.featured { border-color: rgba(26,86,219,0.4); }
     .link-card.featured::before { background: var(--blue); }
 
+    /* Variante — card com borda azul fixa (destaque) */
+    .link-card.premium { border-color: var(--red-glow); }
+    .link-card.premium::before { background: var(--red); }
+
+    /* Variante — card com borda azul fixa (destaque) */
+    .link-card.gratuito { border-color: var(--green-glow); }
+    .link-card.gratuito::before { background: var(--green); }
+
     /* Variante — card desabilitado (em breve) */
     .link-card.soon {
       opacity: 0.5;
@@ -493,7 +502,7 @@
           <img src="/assets/catalogo/icones/legislacao-thumb.webp" alt="Combo Legislação Extravagante"/>
         </div>
         <div class="card-body">
-          <div class="card-title">COMBO Legislação Extravagante</div>
+          <div class="card-title">COMBO Legislação Extravagante 2026</div>
           <div class="card-desc">Questões Comentadas · Padrão das Principais Bancas</div>
         </div>
         <span class="card-badge badge-blue">Disponível</span>
@@ -507,7 +516,7 @@
           <img src="/assets/catalogo/icones/gms-thumb.webp" alt="Combo Guardas Municipais"/>
         </div>
         <div class="card-body">
-          <div class="card-title">COMBO Guardas Municipais</div>
+          <div class="card-title">COMBO Guardas Municipais 2026</div>
           <div class="card-desc">Material Completo · Questões Comentadas · Padrão das Principais Bancas</div>
         </div>
         <span class="card-badge badge-blue">Disponível</span>
@@ -516,7 +525,7 @@
         </svg>
       </a>
 
-      <a id="#combo_direito" href="#combo_direito" class="link-card fu4">
+      <a id="#combo_direito" href="#combo_direito" class="link-card soon fu4">
         <div class="card-thumb">
           <img src="/assets/catalogo/icones/direito-thumb.webp" alt="Combo Direito"/>
         </div>
@@ -530,7 +539,7 @@
         </svg>
       </a>
 
-      <a href="#simulado-gratuito" class="link-card fu5">
+      <a href="#simulado-gratuito" class="link-card gratuito fu5">
         <div class="card-thumb">
           <img src="/assets/catalogo/icones/penal-thumb.webp" alt="Direito Penal Gratuito"/>
         </div>
@@ -544,7 +553,7 @@
         </svg>
       </a>
 
-      <a id="#combo_adm" href="#combo_adm" class="link-card fu6">
+      <a id="#combo_adm" href="#combo_adm" class="link-card soon fu6">
         <div class="card-thumb">
           <img src="/assets/catalogo/icones/adm-thumb.webp" alt="Combo Administrativo"/>
         </div>
@@ -558,7 +567,7 @@
         </svg>
       </a>
 
-      <a id="#combo_militar" href="#combo_militar" class="link-card fu7">
+      <a id="#combo_militar" href="#combo_militar" class="link-card soon fu7">
         <div class="card-thumb">
           <img src="/assets/catalogo/icones/militar-thumb.webp" alt="Combo Militar"/>
         </div>
@@ -572,7 +581,7 @@
         </svg>
       </a>
 
-      <a id="#combo_civil" href="#combo_civil" class="link-card fu8">
+      <a id="#combo_civil" href="#combo_civil" class="link-card soon fu8">
         <div class="card-thumb">
           <img src="/assets/catalogo/icones/civil-thumb.webp" alt="Combo Civil"/>
         </div>
@@ -586,7 +595,7 @@
         </svg>
       </a>
 
-      <a id="#combo_federal" href="#combo_federal" class="link-card fu9">
+      <a id="#combo_federal" href="#combo_federal" class="link-card soon fu9">
         <div class="card-thumb">
           <img src="/assets/catalogo/icones/federal-thumb.webp" alt="Combo Federal"/>
         </div>
