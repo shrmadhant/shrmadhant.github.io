@@ -1,0 +1,95 @@
+/* ─────────────────────────────────────────
+   SISTEMA DE DESIGN GLOBAL — MERCER
+   ───────────────────────────────────────── */
+:root {
+  --bg:         #080810;
+  --surface:    #0f0f1a;
+  --surface-2:  #141424;
+  --border:     #1e2035;
+  --border-hi:  #2a2d50;
+  
+  --blue:       #1a56db;
+  --blue-hi:    #4d7fe8;
+  --blue-dim:   rgba(26,86,219,0.12);
+  --blue-glow:  rgba(26,86,219,0.3);
+  
+  --red:        #c0392b;
+  --red-hi:     #e74c3c;
+  --red-dim:    rgba(192,57,43,0.12);
+  --red-glow:   rgba(192,57,43,0.35);
+  
+  --green:      #27ae60;
+  --green-hi:   #2ecc71;
+  --green-dim:  rgba(39,174,96,0.12);
+  
+  --amber:      #d97706;
+  --amber-hi:   #f59e0b;
+  --amber-dim:  rgba(217,119,6,0.12);
+  
+  --text:       #e8eaf2;
+  --text-mid:   #a0a8c0;
+  --text-muted: #5a6280;
+  
+  --font-d: 'Bebas Neue', sans-serif;
+  --font-b: 'DM Sans', sans-serif;
+}
+
+/* ── Reset e Base ── */
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+  scroll-padding-top: 72px; 
+}
+
+body {
+  background: var(--bg); 
+  color: var(--text); 
+  font-family: var(--font-b); 
+  font-size: 16px; 
+  line-height: 1.6; 
+  min-height: 100vh; 
+  overflow-x: hidden; 
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Grade Tática / Background Global ── */
+body::before {
+  content: ''; 
+  position: fixed; 
+  inset: 0; 
+  z-index: 0; 
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(26,86,219,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,86,219,0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.z1 { 
+  position: relative; 
+  z-index: 1; 
+}
+
+/* ── Tipografia Global ── */
+h1, h2, h3, h4 { 
+  font-family: var(--font-d); 
+  letter-spacing: 0.03em; 
+  line-height: 1.05; 
+}
+h1 { font-size: clamp(2.4rem, 5vw, 5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.1rem; }
+p  { color: var(--text-mid); }
+strong { color: var(--text); font-weight: 700; }
+
+/* ── Classes Utilitárias ── */
+.accent-blue  { color: var(--blue-hi); }
+.accent-red   { color: var(--red-hi); }
+.accent-green { color: var(--green-hi); }
+.accent-amber { color: var(--amber-hi); }
