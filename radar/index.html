@@ -21,7 +21,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Radar de Editais — MERCER | Concursos Policiais</title>
-  <meta name="description" content="Editais abertos e previstos no radar Mercer. Datas, vagas, salários e links oficiais para concursos policiais 2025/2026."/>
+  <meta name="description" content="Editais abertos e previstos no radar Mercer. Datas, vagas, salários e links oficiais para concursos policiais 2026/2027."/>
 
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png"/>
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-icon.png"/>
@@ -30,484 +30,45 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
 
-  <style>
-    /* ─────────────────────────────────────────
-       TOKENS — sistema idêntico ao hub
-       ───────────────────────────────────────── */
-    :root {
-      --bg:         #080810;
-      --surface:    #0f0f1a;
-      --surface-2:  #141424;
-      --border:     #1e2035;
-      --border-hi:  #2a2d50;
-      --blue:       #1a56db;
-      --blue-hi:    #4d7fe8;
-      --blue-dim:   rgba(26,86,219,0.12);
-      --blue-glow:  rgba(26,86,219,0.3);
-      --red:        #c0392b;
-      --red-hi:     #e74c3c;
-      --red-dim:    rgba(192,57,43,0.12);
-      --red-glow:   rgba(192,57,43,0.35);
-      --green:      #27ae60;
-      --green-hi:   #2ecc71;
-      --green-dim:  rgba(39,174,96,0.12);
-      --amber:      #d97706;
-      --amber-hi:   #f59e0b;
-      --amber-dim:  rgba(217,119,6,0.12);
-      --text:       #e8eaf2;
-      --text-mid:   #a0a8c0;
-      --text-muted: #5a6280;
-      --font-d: 'Bebas Neue', sans-serif;
-      --font-b: 'DM Sans', sans-serif;
-    }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/header.css" />
+  <link rel="stylesheet" href="/css/radar.css"  />
 
-    body {
-      background: var(--bg); color: var(--text);
-      font-family: var(--font-b); font-size: 16px; line-height: 1.6;
-      min-height: 100vh; overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
 
-    /* Grade tática */
-    body::before {
-      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image:
-        linear-gradient(rgba(26,86,219,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(26,86,219,0.035) 1px, transparent 1px);
-      background-size: 48px 48px;
-    }
-    /* Glow ambiental */
-    body::after {
-      content: ''; position: fixed; top: -80px; left: 50%;
-      transform: translateX(-50%); width: 700px; height: 500px;
-      background: radial-gradient(ellipse, rgba(26,86,219,0.08) 0%, transparent 70%);
-      pointer-events: none; z-index: 0;
-    }
-
-    .z1 { position: relative; z-index: 1; }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-
-    /* ─────────────────────────────────────────
-       STRIPE + TOPNAV
-       ───────────────────────────────────────── */
-    .top-stripe {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      height: 2px;
-      background: linear-gradient(to right, var(--blue), var(--red));
-    }
-
-    .topnav {
-      position: fixed; top: 2px; left: 0; right: 0; z-index: 100;
-      background: rgba(8,8,16,0.95); backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .topnav-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 58px; padding: 0 24px;
-      max-width: 1140px; margin: 0 auto;
-    }
-    .nav-logo {
-      font-family: var(--font-d); font-size: 1.35rem; letter-spacing: 0.08em;
-      color: var(--text); text-decoration: none;
-      display: flex; align-items: center; gap: 8px;
-      transition: color 0.15s;
-    }
-    .nav-logo:hover { color: var(--blue-hi); }
-    .logo-dot { width: 7px; height: 7px; background: var(--red); flex-shrink: 0; }
-
-    .nav-right { display: flex; align-items: center; gap: 24px; }
-    .nav-link {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--text-muted);
-      text-decoration: none; transition: color 0.15s;
-    }
-    .nav-link:hover  { color: var(--text); }
-    .nav-link.active { color: var(--blue-hi); }
-
-    .nav-cta {
-      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: #fff;
-      text-decoration: none; padding: 8px 18px;
-      background: var(--red);
-      clip-path: polygon(0 0,calc(100% - 7px) 0,100% 7px,100% 100%,7px 100%,0 calc(100% - 7px));
-      transition: background 0.15s, box-shadow 0.15s;
-    }
-    .nav-cta:hover { background: var(--red-hi); box-shadow: 0 0 16px var(--red-glow); }
-
-    @media (max-width: 640px) {
-      .nav-right .nav-link { display: none; }
-    }
-
-    /* ─────────────────────────────────────────
-       PAGE HEADER
-       ───────────────────────────────────────── */
-    .page-header {
-      padding: 96px 0 48px;
-      border-bottom: 1px solid var(--border);
-    }
-    .page-header::before {
-      content: ''; display: block;
-      width: 32px; height: 2px;
-      background: var(--red); margin-bottom: 20px;
-    }
-    .page-header h1 {
-      font-family: var(--font-d);
-      font-size: clamp(2.6rem, 6vw, 4.5rem);
-      letter-spacing: 0.04em; line-height: 1.05;
-      margin-bottom: 12px;
-    }
-    .page-header p {
-      font-size: 0.95rem; color: var(--text-muted);
-      max-width: 560px; line-height: 1.7;
-    }
-
-    /* Contador de editais */
-    .header-meta {
-      display: flex; align-items: center; gap: 24px;
-      margin-top: 24px; flex-wrap: wrap;
-    }
-    .meta-pill {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 6px 14px; border: 1px solid;
-    }
-    .meta-pill.aberto  { color: var(--green-hi); border-color: var(--green); background: var(--green-dim); }
-    .meta-pill.previsto{ color: var(--amber-hi); border-color: var(--amber); background: var(--amber-dim); }
-    .meta-pill.encerrado{ color: var(--text-muted); border-color: var(--border); }
-
-    .meta-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-    }
-    .dot-green  { background: var(--green-hi); }
-    .dot-amber  { background: var(--amber-hi); }
-    .dot-muted  { background: var(--text-muted); }
-
-    /* Atualização */
-    .update-info {
-      font-size: 0.68rem; color: var(--text-muted); margin-top: 16px;
-      display: flex; align-items: center; gap: 6px;
-    }
-    .update-info svg { color: var(--blue-hi); }
-
-    /* ─────────────────────────────────────────
-       FILTROS
-       ───────────────────────────────────────── */
-    .filters-bar {
-      position: sticky; top: 60px; z-index: 50;
-      background: rgba(8,8,16,0.96); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 0;
-    }
-    .filters-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; flex-wrap: wrap;
-    }
-
-    /* Chips de status */
-    .chip-group { display: flex; gap: 8px; flex-wrap: wrap; }
-    .chip {
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em;
-      text-transform: uppercase; padding: 6px 14px;
-      border: 1px solid var(--border); background: transparent;
-      color: var(--text-muted); cursor: pointer;
-      transition: all 0.15s;
-    }
-    .chip:hover { border-color: var(--border-hi); color: var(--text); }
-    .chip.active-all     { background: var(--blue);  border-color: var(--blue);  color: #fff; }
-    .chip.active-aberto  { background: var(--green); border-color: var(--green); color: #fff; }
-    .chip.active-previsto{ background: var(--amber); border-color: var(--amber); color: #0a0a10; }
-    .chip.active-encerrado{ background: var(--surface-2); border-color: var(--border-hi); color: var(--text-muted); }
-
-    /* Busca */
-    .search-wrap { position: relative; }
-    .search-wrap svg {
-      position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
-      color: var(--text-muted); pointer-events: none;
-    }
-    .search-input {
-      background: var(--surface); border: 1px solid var(--border);
-      color: var(--text); font-family: var(--font-b); font-size: 0.83rem;
-      padding: 7px 14px 7px 34px; width: 220px; outline: none;
-      transition: border-color 0.15s;
-    }
-    .search-input::placeholder { color: var(--text-muted); }
-    .search-input:focus { border-color: var(--blue); }
-
-    @media (max-width: 640px) {
-      .search-input { width: 100%; }
-      .filters-inner { flex-direction: column; align-items: flex-start; }
-    }
-
-    /* ─────────────────────────────────────────
-       GRID DE EDITAIS
-       ───────────────────────────────────────── */
-    .editais-main { padding: 40px 0 80px; }
-
-    .editais-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    @media (max-width: 1000px) { .editais-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width:  600px) { .editais-grid { grid-template-columns: 1fr; } }
-
-    /* ─────────────────────────────────────────
-       CARD DE EDITAL
-       ───────────────────────────────────────── */
-    .edital-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      display: flex; flex-direction: column;
-      position: relative; overflow: hidden;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-    .edital-card:hover { border-color: var(--border-hi); transform: translateY(-3px); }
-
-    /* Barra de status no topo do card */
-    .edital-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    }
-    .edital-card.aberto::before   { background: var(--green); }
-    .edital-card.previsto::before { background: var(--amber); }
-    .edital-card.encerrado::before{ background: var(--text-muted); }
-
-    /* Linha inferior ao hover */
-    .edital-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(to right, var(--blue), var(--red));
-      transform: scaleX(0); transform-origin: left; transition: transform 0.25s;
-    }
-    .edital-card:hover::after { transform: scaleX(1); }
-
-    /* Cartão oculto pelo filtro */
-    .edital-card[data-hidden="true"] { display: none; }
-
-    /* ── Cabeçalho do card ── */
-    .card-head {
-      padding: 20px 20px 16px;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
-    }
-
-    .card-organ {
-      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--blue-hi); margin-bottom: 5px;
-      display: block;
-    }
-    .card-cargo {
-      font-family: var(--font-d); font-size: 1.25rem;
-      color: var(--text); line-height: 1.15;
-    }
-
-    /* Badge de status */
-    .status-badge {
-      flex-shrink: 0; display: inline-flex; align-items: center; gap: 5px;
-      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.15em;
-      text-transform: uppercase; padding: 4px 9px; border: 1px solid;
-      white-space: nowrap;
-    }
-    .status-badge .s-dot { width: 5px; height: 5px; border-radius: 50%; }
-    .badge-aberto   { color: var(--green-hi); border-color: var(--green); background: var(--green-dim); }
-    .badge-previsto { color: var(--amber-hi); border-color: var(--amber); background: var(--amber-dim); }
-    .badge-encerrado{ color: var(--text-muted); border-color: var(--border); }
-    .badge-aberto   .s-dot { background: var(--green-hi); }
-    .badge-previsto .s-dot { background: var(--amber-hi); }
-    .badge-encerrado .s-dot{ background: var(--text-muted); }
-
-    /* ── Dados do card ── */
-    .card-data {
-      padding: 16px 20px;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 12px 8px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .data-item { display: flex; flex-direction: column; gap: 3px; }
-    .data-label {
-      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--text-muted);
-    }
-    .data-value {
-      font-size: 0.86rem; font-weight: 600; color: var(--text);
-      line-height: 1.3;
-    }
-    .data-value.highlight { color: var(--green-hi); font-family: var(--font-d); font-size: 1.05rem; }
-
-    /* ── Datas-chave ── */
-    .card-dates {
-      padding: 14px 20px;
-      border-bottom: 1px solid var(--border);
-      display: flex; flex-direction: column; gap: 8px;
-    }
-    .card-dates-title {
-      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--text-muted); margin-bottom: 2px;
-    }
-    .date-row {
-      display: flex; align-items: center; justify-content: space-between; gap: 8px;
-    }
-    .date-event { font-size: 0.78rem; color: var(--text-mid); }
-    .date-val   { font-size: 0.78rem; font-weight: 700; color: var(--text); white-space: nowrap; }
-    .date-val.urgent { color: var(--red-hi); }
-    .date-val.past   { color: var(--text-muted); text-decoration: line-through; }
-
-    /* Barra de progresso do prazo */
-    .deadline-bar {
-      height: 3px; background: var(--border);
-      margin-top: 8px; overflow: hidden;
-    }
-    .deadline-fill {
-      height: 100%; background: var(--green);
-      transition: width 0s;
-    }
-    .deadline-fill.warn   { background: var(--amber); }
-    .deadline-fill.urgent { background: var(--red); }
-
-    /* ── Notas / observações ── */
-    .card-notes {
-      padding: 12px 20px;
-      font-size: 0.78rem; color: var(--text-muted); line-height: 1.6;
-      border-bottom: 1px solid var(--border);
-      flex: 1;
-    }
-    .card-notes em { font-style: normal; color: var(--amber-hi); }
-
-    /* ── Rodapé do card ── */
-    .card-foot {
-      padding: 14px 20px;
-      display: flex; align-items: center; justify-content: space-between; gap: 8px;
-    }
-    .card-local {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 0.75rem; color: var(--text-muted);
-    }
-    .card-local svg { color: var(--blue-hi); flex-shrink: 0; }
-
-    .card-actions { display: flex; gap: 8px; }
-
-    .btn-edital {
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 7px 14px;
-      text-decoration: none; border: 1px solid; transition: all 0.15s;
-      white-space: nowrap;
-    }
-    .btn-edital.primary {
-      background: var(--blue); border-color: var(--blue); color: #fff;
-    }
-    .btn-edital.primary:hover { background: var(--blue-hi); border-color: var(--blue-hi); box-shadow: 0 0 12px var(--blue-glow); }
-    .btn-edital.secondary {
-      background: transparent; border-color: var(--border); color: var(--text-muted);
-    }
-    .btn-edital.secondary:hover { border-color: var(--border-hi); color: var(--text); }
-    .btn-edital.disabled {
-      background: transparent; border-color: var(--border);
-      color: var(--text-muted); opacity: 0.45; pointer-events: none;
-    }
-
-    /* ─────────────────────────────────────────
-       CARD "EM OBSERVAÇÃO" — menor, sem datas
-       ───────────────────────────────────────── */
-    .edital-card.observacao { opacity: 0.65; }
-    .edital-card.observacao:hover { opacity: 1; }
-
-    /* ─────────────────────────────────────────
-       ESTADO VAZIO
-       ───────────────────────────────────────── */
-    #empty-state {
-      display: none;
-      text-align: center; padding: 80px 0; grid-column: 1 / -1;
-    }
-    #empty-state .empty-icon { font-size: 2.5rem; opacity: 0.2; margin-bottom: 12px; }
-    #empty-state strong { display: block; font-size: 1rem; color: var(--text); margin-bottom: 6px; }
-    #empty-state p { font-size: 0.85rem; color: var(--text-muted); }
-
-    /* ─────────────────────────────────────────
-       AVISO DE ATUALIZAÇÃO MANUAL
-       ───────────────────────────────────────── */
-    .notice-bar {
-      background: var(--amber-dim); border: 1px solid var(--amber);
-      border-left: 3px solid var(--amber-hi);
-      padding: 12px 20px; margin-bottom: 24px;
-      display: flex; align-items: flex-start; gap: 12px;
-    }
-    .notice-bar svg { color: var(--amber-hi); flex-shrink: 0; margin-top: 2px; }
-    .notice-bar p   { font-size: 0.8rem; color: var(--text-mid); line-height: 1.5; }
-    .notice-bar strong { color: var(--amber-hi); }
-
-    /* ─────────────────────────────────────────
-       FOOTER
-       ───────────────────────────────────────── */
-    .page-footer {
-      border-top: 1px solid var(--border);
-      padding: 36px 0;
-      position: relative;
-    }
-    .page-footer::before {
-      content: ''; display: block;
-      width: 100%; height: 2px;
-      background: linear-gradient(to right, var(--blue), var(--red), transparent);
-      position: absolute; top: 0; left: 0;
-    }
-    .footer-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-    }
-    .footer-logo {
-      font-family: var(--font-d); font-size: 1.1rem; letter-spacing: 0.08em;
-      color: var(--text); text-decoration: none;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .footer-links { display: flex; gap: 4px; flex-wrap: wrap; }
-    .footer-links a {
-      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--text-muted); text-decoration: none;
-      padding: 0 10px; border-right: 1px solid var(--border); transition: color 0.15s;
-    }
-    .footer-links a:last-child { border-right: none; }
-    .footer-links a:hover { color: var(--blue-hi); }
-    .footer-copy { font-size: 0.68rem; color: var(--text-muted); }
-
-    /* ─────────────────────────────────────────
-       ANIMAÇÕES
-       ───────────────────────────────────────── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .fu0 { animation: fadeUp 0.5s      ease both; }
-    .fu1 { animation: fadeUp 0.5s .08s ease both; }
-    .fu2 { animation: fadeUp 0.5s .16s ease both; }
-
-    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-  </style>
 </head>
 <body>
   <!-- GTM noscript -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBJ2GSS4"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="top-stripe"></div>
-
-  <!-- ══════════════════════════════
-       TOPNAV
-       ══════════════════════════════ -->
-  <nav class="topnav z1">
-    <div class="topnav-inner">
-      <a href="/index.html" class="nav-logo">
+  <!-- NAVBAR -->
+  <nav class="nav z1">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
         <span class="logo-dot"></span>
         MERCER | Concursos Policiais
       </a>
-      <div class="nav-right">
-        <a href="/index.html" class="nav-link">HOME</a>
-        <a href="/radar/" class="nav-link active">Editais</a>
-        <a href="/catalogo" class="nav-link">Catálogo</a>
-        <a href="/catalogo" class="nav-cta">Ver materiais</a>
+      <div class="nav-links">
+        <a href="/index.html">HOME</a>
+        <a href="/radar/" class="active" >EDITAIS</a>
+        <a href="/catalogo/">Catálogo</a>
+        <a href="/radar/" class="btn btn-red" style="padding:10px 20px;font-size:0.68rem;">Editais Abertos</a>
       </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="nav-stripe"></div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="/index.html">HOME</a>
+      <a href="/radar/">EDITAIS</a>
+      <a href="/catalogo/">Catálogo</a>
+      <a href="legal.html#faq">FAQ</a>
     </div>
   </nav>
 
@@ -516,6 +77,12 @@
        ══════════════════════════════ -->
   <header class="page-header z1">
     <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Início</a>
+        <span>/</span>
+        <span style="color:var(--text)">Editais</span>
+      </div>
+
       <div class="fu0">
         <h1>RADAR DE <span style="color:var(--blue-hi)">EDITAIS</span></h1>
         <p>Concursos policiais no nosso radar — editais abertos, previstos e encerrados.

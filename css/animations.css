@@ -1,0 +1,23 @@
+
+/* ─────────────────────────────────────────
+   ANIMAÇÕES
+   ───────────────────────────────────────── */
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.fu0 { animation: fadeUp 0.5s      ease both; }
+.fu1 { animation: fadeUp 0.5s .08s ease both; }
+.fu2 { animation: fadeUp 0.5s .16s ease both; }
+
+
+
+
+
+
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+

@@ -1,0 +1,607 @@
+/* Contador de editais */
+.header-meta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.meta-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid;
+}
+
+.meta-pill.aberto {
+    color: var(--green-hi);
+    border-color: var(--green);
+    background: var(--green-dim);
+}
+
+.meta-pill.previsto {
+    color: var(--amber-hi);
+    border-color: var(--amber);
+    background: var(--amber-dim);
+}
+
+.meta-pill.encerrado {
+    color: var(--text-muted);
+    border-color: var(--border);
+}
+
+.meta-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.dot-green {
+    background: var(--green-hi);
+}
+
+.dot-amber {
+    background: var(--amber-hi);
+}
+
+.dot-muted {
+    background: var(--text-muted);
+}
+
+/* Atualização */
+.update-info {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.update-info svg {
+    color: var(--blue-hi);
+}
+
+/* ─────────────────────────────────────────
+       FILTROS
+       ───────────────────────────────────────── */
+.filters-bar {
+    position: sticky;
+    top: 60px;
+    z-index: 50;
+    background: rgba(8, 8, 16, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+}
+
+.filters-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Chips de status */
+.chip-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.chip:hover {
+    border-color: var(--border-hi);
+    color: var(--text);
+}
+
+.chip.active-all {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+}
+
+.chip.active-aberto {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+}
+
+.chip.active-previsto {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #0a0a10;
+}
+
+.chip.active-encerrado {
+    background: var(--surface-2);
+    border-color: var(--border-hi);
+    color: var(--text-muted);
+}
+
+/* Busca */
+.search-wrap {
+    position: relative;
+}
+
+.search-wrap svg {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.search-input {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-b);
+    font-size: 0.83rem;
+    padding: 7px 14px 7px 34px;
+    width: 220px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-input:focus {
+    border-color: var(--blue);
+}
+
+@media (max-width: 640px) {
+    .search-input {
+        width: 100%;
+    }
+
+    .filters-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ─────────────────────────────────────────
+       GRID DE EDITAIS
+       ───────────────────────────────────────── */
+.editais-main {
+    padding: 40px 0 80px;
+}
+
+.editais-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 1000px) {
+    .editais-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .editais-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─────────────────────────────────────────
+       CARD DE EDITAL
+       ───────────────────────────────────────── */
+.edital-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.edital-card:hover {
+    border-color: var(--border-hi);
+    transform: translateY(-3px);
+}
+
+/* Barra de status no topo do card */
+.edital-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+}
+
+.edital-card.aberto::before {
+    background: var(--green);
+}
+
+.edital-card.previsto::before {
+    background: var(--amber);
+}
+
+.edital-card.encerrado::before {
+    background: var(--text-muted);
+}
+
+/* Linha inferior ao hover */
+.edital-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--blue), var(--red));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s;
+}
+
+.edital-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* Cartão oculto pelo filtro */
+.edital-card[data-hidden="true"] {
+    display: none;
+}
+
+/* ── Cabeçalho do card ── */
+.card-head {
+    padding: 20px 20px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.card-organ {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-hi);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.card-cargo {
+    font-family: var(--font-d);
+    font-size: 1.25rem;
+    color: var(--text);
+    line-height: 1.15;
+}
+
+/* Badge de status */
+.status-badge {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border: 1px solid;
+    white-space: nowrap;
+}
+
+.status-badge .s-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+}
+
+.badge-aberto {
+    color: var(--green-hi);
+    border-color: var(--green);
+    background: var(--green-dim);
+}
+
+.badge-previsto {
+    color: var(--amber-hi);
+    border-color: var(--amber);
+    background: var(--amber-dim);
+}
+
+.badge-encerrado {
+    color: var(--text-muted);
+    border-color: var(--border);
+}
+
+.badge-aberto .s-dot {
+    background: var(--green-hi);
+}
+
+.badge-previsto .s-dot {
+    background: var(--amber-hi);
+}
+
+.badge-encerrado .s-dot {
+    background: var(--text-muted);
+}
+
+/* ── Dados do card ── */
+.card-data {
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.data-label {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.data-value {
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+.data-value.highlight {
+    color: var(--green-hi);
+    font-family: var(--font-d);
+    font-size: 1.05rem;
+}
+
+/* ── Datas-chave ── */
+.card-dates {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-dates-title {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2px;
+}
+
+.date-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.date-event {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+}
+
+.date-val {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.date-val.urgent {
+    color: var(--red-hi);
+}
+
+.date-val.past {
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+/* Barra de progresso do prazo */
+.deadline-bar {
+    height: 3px;
+    background: var(--border);
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.deadline-fill {
+    height: 100%;
+    background: var(--green);
+    transition: width 0s;
+}
+
+.deadline-fill.warn {
+    background: var(--amber);
+}
+
+.deadline-fill.urgent {
+    background: var(--red);
+}
+
+/* ── Notas / observações ── */
+.card-notes {
+    padding: 12px 20px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    border-bottom: 1px solid var(--border);
+    flex: 1;
+}
+
+.card-notes em {
+    font-style: normal;
+    color: var(--amber-hi);
+}
+
+/* ── Rodapé do card ── */
+.card-foot {
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.card-local {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.card-local svg {
+    color: var(--blue-hi);
+    flex-shrink: 0;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-edital {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    text-decoration: none;
+    border: 1px solid;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+
+.btn-edital.primary {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+}
+
+.btn-edital.primary:hover {
+    background: var(--blue-hi);
+    border-color: var(--blue-hi);
+    box-shadow: 0 0 12px var(--blue-glow);
+}
+
+.btn-edital.secondary {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-muted);
+}
+
+.btn-edital.secondary:hover {
+    border-color: var(--border-hi);
+    color: var(--text);
+}
+
+.btn-edital.disabled {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-muted);
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+/* ─────────────────────────────────────────
+       CARD "EM OBSERVAÇÃO" — menor, sem datas
+       ───────────────────────────────────────── */
+.edital-card.observacao {
+    opacity: 0.65;
+}
+
+.edital-card.observacao:hover {
+    opacity: 1;
+}
+
+/* ─────────────────────────────────────────
+       ESTADO VAZIO
+       ───────────────────────────────────────── */
+#empty-state {
+    display: none;
+    text-align: center;
+    padding: 80px 0;
+    grid-column: 1 / -1;
+}
+
+#empty-state .empty-icon {
+    font-size: 2.5rem;
+    opacity: 0.2;
+    margin-bottom: 12px;
+}
+
+#empty-state strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+#empty-state p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ─────────────────────────────────────────
+       AVISO DE ATUALIZAÇÃO MANUAL
+       ───────────────────────────────────────── */
+.notice-bar {
+    background: var(--amber-dim);
+    border: 1px solid var(--amber);
+    border-left: 3px solid var(--amber-hi);
+    padding: 12px 20px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.notice-bar svg {
+    color: var(--amber-hi);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.notice-bar p {
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+}
+
+.notice-bar strong {
+    color: var(--amber-hi);
+}
