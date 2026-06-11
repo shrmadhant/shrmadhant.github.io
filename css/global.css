@@ -83,6 +83,11 @@ body::after {
   z-index: 1; 
 }
 
+.z2 {
+  position: relative;
+  z-index: 2;
+}
+
 .container {
   max-width: 1140px;
   margin: 0 auto;
