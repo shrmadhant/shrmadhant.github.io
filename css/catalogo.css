@@ -197,6 +197,8 @@
     font-family: var(--font-d);
     font-size: 1.25rem;
     line-height: 1.15;
+    text-decoration: none;
+    color: var(--white);
 }
 
 .product-desc {
@@ -232,7 +234,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 8px 16px;
-    background: var(--red);
+    background: var(--green);
     color: #fff;
     text-decoration: none;
     border: none;
