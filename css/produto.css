@@ -75,6 +75,8 @@
 
 /* ─── Trust row ───────────────────────────────────── */
 /* Substitui: .trust-row-item (identity) e .aside-trust-item (produto) */
+.trust-row { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 24px; }
+
 .trust-item {
     display: flex;
     align-items: center;
