@@ -2,41 +2,42 @@
    SISTEMA DE DESIGN GLOBAL
    ───────────────────────────────────────── */
 :root {
-  --bg:         #080810;
-  --surface:    #0f0f1a;
-  --surface-2:  #141424;
-  --border:     #1e2035;
-  --border-hi:  #2a2d50;
+  --bg:              #080810;
+  --surface:         #0f0f1a;
+  --surface-2:       #141424;
+  --border:          #1e2035;
+  --border-hi:       #2a2d50;
   
-  --blue:       #1a56db;
-  --blue-hi:    #4d7fe8;
-  --blue-dim:   rgba(26,86,219,0.12);
-  --blue-glow:  rgba(26,86,219,0.3);
+  --blue:            #1a56db;
+  --blue-hi:         #4d7fe8;
+  --blue-dim:        rgba(26,86,219,0.12);
+  --blue-glow:       rgba(26,86,219,0.3);
   
-  --red:        #c0392b;
-  --red-hi:     #e74c3c;
-  --red-dim:    rgba(192,57,43,0.12);
-  --red-glow:   rgba(192,57,43,0.35);
+  --red:             #c0392b;
+  --red-hi:          #e74c3c;
+  --red-dim:         rgba(192,57,43,0.12);
+  --red-glow:        rgba(192,57,43,0.35);
   
-  --green:      #27ae60;
-  --green-hi:   #2ecc71;
-  --green-dim:  rgba(39,174,96,0.12);
+  --green:           #27ae60;
+  --green-hi:        #2ecc71;
+  --green-dim:       rgba(39,174,96,0.12);
   
-  --amber:      #d97706;
-  --amber-hi:   #f59e0b;
-  --amber-dim:  rgba(217,119,6,0.12);
+  --amber:           #d97706;
+  --amber-hi:        #f59e0b;
+  --amber-dim:       rgba(217,119,6,0.12);
   
-  --gold:       #c4971d;
-  --gold-hi:    #dbad2f;
-  --gold-dim:   rgba(201,168,76,0.12);
-  --gold-glow:  rgba(201,168,76,0.3);
+  --gold:            #c4971d;
+  --gold-hi:         #dbad2f;
+  --gold-dim:        rgba(201,168,76,0.12);
+  --gold-glow:       rgba(201,168,76,0.3);
 
-  --text:       #e8eaf2;
-  --text-mid:   #a0a8c0;
-  --text-muted: #5a6280;
+  --text:            #e8eaf2;
+  --text-mid:        #a0a8c0;
+  --text-muted:      #5a6280;
   
-  --font-d:     'Bebas Neue', sans-serif;
-  --font-b:     'DM Sans',    sans-serif;
+  --font-d:          'Bebas Neue',            sans-serif;
+  --font-b:          'DM Sans',               sans-serif;
+  --font-impact:     'Arial Narrow Bold',     sans-serif;
 }
 
 /* ── Reset e Base ── */

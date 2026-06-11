@@ -1,0 +1,78 @@
+/* =====================================================
+       SLOT DE IMAGEM 1 — pertencimento / farda / glória
+       ===================================================== */
+.img-slot-1 {
+    position: relative;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+    background: var(--surface-2);
+}
+
+/* Placeholder — remova o bloco inteiro quando tiver a imagem */
+.img-placeholder {
+    width: 100%;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 2px dashed var(--border-hi);
+}
+
+.img-placeholder-icon {
+    color: var(--text-muted);
+    opacity: 0.4;
+}
+
+.img-placeholder-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.img-placeholder-hint {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    max-width: 320px;
+    text-align: center;
+}
+
+/* ── Para usar a imagem, substitua o bloco .img-placeholder por:
+       <img src="sua-imagem.jpg" alt="descrição"
+            style="width:100%;height:480px;object-fit:cover;display:block;"/>
+       ── */
+
+/* Legenda sobreposta (opcional, aparece sobre a imagem) */
+.img-caption-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 32px;
+    background: linear-gradient(to top, rgba(8, 8, 16, 0.9) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.img-caption-text {
+    font-family: var(--font-d);
+    font-size: 1.1rem;
+    color: var(--text);
+    letter-spacing: 0.06em;
+}
+
+
+/* =====================================================
+       SLOT DE IMAGEM 2 — mockup do produto / material
+       ===================================================== */
+.img-slot-2 {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
