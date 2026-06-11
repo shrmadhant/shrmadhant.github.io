@@ -179,6 +179,11 @@ body {
   gap: 10px;
 }
 
+.link {
+  text-decoration: none;
+  color: var(--text);
+}
+
 .link-card {
   display: flex;
   align-items: center;
@@ -363,22 +368,6 @@ body {
 .hub-footer-links a:hover { color: var(--blue-hi); }
 
 /* Animações de entrada */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.fu0  { animation: fadeUp 0.5s       ease both; }
-.fu1  { animation: fadeUp 0.5s 0.08s ease both; }
-.fu2  { animation: fadeUp 0.5s 0.16s ease both; }
-.fu3  { animation: fadeUp 0.5s 0.24s ease both; }
-.fu4  { animation: fadeUp 0.5s 0.32s ease both; }
-.fu5  { animation: fadeUp 0.5s 0.40s ease both; }
-.fu6  { animation: fadeUp 0.5s 0.48s ease both; }
-.fu7  { animation: fadeUp 0.5s 0.56s ease both; }
-.fu8  { animation: fadeUp 0.5s 0.64s ease both; }
-.fu9  { animation: fadeUp 0.5s 0.72s ease both; }
-.fu10 { animation: fadeUp 0.5s 0.80s ease both; }
-.fu11 { animation: fadeUp 0.5s 0.88s ease both; }
 
 @media (max-width: 480px) {
   .hub { padding: 60px 16px 48px; }

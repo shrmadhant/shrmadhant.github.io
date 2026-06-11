@@ -1,32 +1,3 @@
-.tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--font-b);
-    font-size: 0.62rem;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border: 1px solid;
-}
-
-.tag-blue {
-    color: var(--blue-hi);
-    border-color: var(--blue);
-    background: rgba(26, 86, 219, 0.1);
-}
-
-.tag-red {
-    color: var(--red-hi);
-    border-color: var(--red);
-    background: rgba(192, 57, 43, 0.1);
-}
-
-.tag-dim {
-    color: var(--text-muted);
-    border-color: var(--border);
-}
 
 .result-count {
     font-size: 0.75rem;

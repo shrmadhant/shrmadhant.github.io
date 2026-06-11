@@ -21,13 +21,20 @@
 .fu9  { animation: fadeUp 0.5s 0.72s ease both; }
 .fu10 { animation: fadeUp 0.5s 0.80s ease both; }
 .fu11 { animation: fadeUp 0.5s 0.88s ease both; }
+.fu12 { animation: fadeUp 0.5s 0.96s ease both; }
 
-
-
-
-
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.cursor {
+  display: inline-block; width: 4px; height: 0.85em;
+  background: var(--red); animation: blink 1s step-end infinite;
+  vertical-align: middle; margin-left: 4px;
+}
 
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-
+@media (max-width: 768px) {
+  .hero { min-height: auto; padding: 96px 0 60px; }
+  .hero-cta-row { flex-direction: column; }
+  .hero-cta-row .btn { width: 100%; }
+}
