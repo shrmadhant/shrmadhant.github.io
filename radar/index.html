@@ -94,6 +94,10 @@
             <span class="meta-dot dot-green"></span>
             <span id="count-aberto">0</span> Abertos
           </span>
+          <span class="meta-pill andamento">
+            <span class="meta-dot dot-blue"></span>
+            <span id="count-andamento">0</span> Em Andamento
+          </span>
           <span class="meta-pill previsto">
             <span class="meta-dot dot-amber"></span>
             <span id="count-previsto">0</span> Previstos
@@ -121,10 +125,11 @@
   <div class="filters-bar z1">
     <div class="container filters-inner">
       <div class="chip-group">
-        <button class="chip active-all" data-filter="todos" onclick="setFilter(this,'todos')">Todos</button>
-        <button class="chip" data-filter="aberto"    onclick="setFilter(this,'aberto')">Abertos</button>
-        <button class="chip" data-filter="previsto"  onclick="setFilter(this,'previsto')">Previstos</button>
-        <button class="chip" data-filter="encerrado" onclick="setFilter(this,'encerrado')">Encerrados</button>
+        <button class="chip active-all"    data-filter="todos"        onclick="setFilter(this,'todos')">Todos</button>
+        <button class="chip"               data-filter="aberto"       onclick="setFilter(this,'aberto')">Abertos</button>
+        <button class="chip"               data-filter="andamento"    onclick="setFilter(this,'andamento')">Em Andamento</button>
+        <button class="chip"               data-filter="previsto"     onclick="setFilter(this,'previsto')">Previstos</button>
+        <button class="chip"               data-filter="encerrado"    onclick="setFilter(this,'encerrado')">Encerrados</button>
       </div>
       <div class="search-wrap">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -164,8 +169,8 @@
              ════════════════════════════════════════════════ -->
 
         <!-- ── EDITAL 1 — Camboriú ── -->
-        <div class="edital-card aberto reveal"
-             data-status="aberto"
+        <div class="edital-card andamento reveal"
+             data-status="andamento"
              data-search="camboriú santa catarina agente trânsito idecan">
 
           <div class="card-head">
@@ -173,8 +178,8 @@
               <span class="card-organ">Prefeitura Municipal de Camboriú · SC</span>
               <div class="card-cargo">Agente de Trânsito</div>
             </div>
-            <span class="status-badge badge-aberto">
-              <span class="s-dot"></span> Aberto
+            <span class="status-badge badge-andamento">
+              <span class="s-dot"></span> Em Andamento
             </span>
           </div>
 
@@ -185,15 +190,15 @@
             </div>
             <div class="data-item">
               <span class="data-label">Vagas</span>
-              <span class="data-value">— <span style="font-size:0.72rem;color:var(--text-muted)">(confirmar)</span></span>
+              <span class="data-value">18 vagas imediatas</span>
             </div>
             <div class="data-item">
               <span class="data-label">Salário</span>
-              <span class="data-value highlight">A confirmar</span>
+              <span class="data-value highlight">R$ 3.900,00</span>
             </div>
             <div class="data-item">
               <span class="data-label">Nível</span>
-              <span class="data-value">Médio</span>
+              <span class="data-value">Médio / CNH AB</span>
             </div>
           </div>
 
@@ -205,11 +210,11 @@
             </div>
             <div class="date-row">
               <span class="date-event">Inscrições</span>
-              <span class="date-val">A confirmar</span>
+              <span class="date-val">09/04/2026 a 11/05/2026</span>
             </div>
             <div class="date-row">
               <span class="date-event">Prova objetiva</span>
-              <span class="date-val">A confirmar</span>
+              <span class="date-val">13/06/2026</span>
             </div>
             <div class="deadline-bar">
               <div class="deadline-fill" style="width:40%"></div>
@@ -230,67 +235,66 @@
             </div>
             <div class="card-actions">
               <a href="/catalogo/agente-transito-camboriu-2026" class="btn-edital secondary">Material</a>
-              <a href="#" class="btn-edital primary">Edital oficial</a>
+              <a href="https://camboriu.sc.gov.br/wp-content/uploads/2026/04/EDITAL-AGENTE-DE-TRANSITO.pdf" target="_blank" class="btn-edital primary">Edital oficial</a>
             </div>
           </div>
         </div>
 
-        <!-- ── EDITAL 2 — Exemplo previsto ── -->
-        <div class="edital-card previsto reveal"
-             data-status="previsto"
-             data-search="paraná pmpr policia militar pm quadro">
+        <!-- ── EDITAL 2 — Itajaí ── -->
+        <div class="edital-card aberto reveal"
+             data-status="aberto"
+             data-search="camboriú santa catarina agente trânsito idecan">
 
           <div class="card-head">
             <div>
-              <span class="card-organ">Polícia Militar do Paraná · PR</span>
-              <div class="card-cargo">Soldado PM — CFSd</div>
+              <span class="card-organ">Prefeitura Municipal de Itajaí · SC</span>
+              <div class="card-cargo">Guarda Municipal</div>
             </div>
-            <span class="status-badge badge-previsto">
-              <span class="s-dot"></span> Previsto
+            <span class="status-badge badge-aberto">
+              <span class="s-dot"></span> Aberto
             </span>
           </div>
 
           <div class="card-data">
             <div class="data-item">
               <span class="data-label">Banca</span>
-              <span class="data-value">A definir</span>
+              <span class="data-value">FEPESE</span>
             </div>
             <div class="data-item">
               <span class="data-label">Vagas</span>
-              <span class="data-value">A confirmar</span>
+              <span class="data-value">20 vagas imediatas + CR</span>
             </div>
             <div class="data-item">
               <span class="data-label">Salário</span>
-              <span class="data-value highlight">A confirmar</span>
+              <span class="data-value highlight">R$ 5.582,16</span>
             </div>
             <div class="data-item">
               <span class="data-label">Nível</span>
-              <span class="data-value">Médio</span>
+              <span class="data-value">Médio / CNH AB</span>
             </div>
           </div>
 
           <div class="card-dates">
-            <span class="card-dates-title">// Previsão</span>
+            <span class="card-dates-title">// Datas-chave</span>
             <div class="date-row">
-              <span class="date-event">Previsão de edital</span>
+              <span class="date-event">Publicação do edital</span>
               <span class="date-val">2026</span>
             </div>
             <div class="date-row">
-              <span class="date-event">Inscrições (est.)</span>
-              <span class="date-val">A definir</span>
+              <span class="date-event">Inscrições</span>
+              <span class="date-val">12/06/2026 a 13/07/2026</span>
             </div>
             <div class="date-row">
-              <span class="date-event">Prova (est.)</span>
-              <span class="date-val">A definir</span>
+              <span class="date-event">Prova objetiva</span>
+              <span class="date-val">06/09/2026</span>
             </div>
             <div class="deadline-bar">
-              <div class="deadline-fill warn" style="width:15%"></div>
+              <div class="deadline-fill" style="width:40%"></div>
             </div>
           </div>
 
           <div class="card-notes">
-            Ciclo anterior encerrado em 2024. Previsão de novo edital para 2026
-            baseada em histórico. <em>Aguardando confirmação oficial.</em>
+            Edital no radar Mercer. Material específico em produção para este cargo.
           </div>
 
           <div class="card-foot">
@@ -298,24 +302,95 @@
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
               </svg>
-              Paraná, PR
+              Itajaí, SC
             </div>
             <div class="card-actions">
-              <span class="btn-edital disabled">Material</span>
-              <span class="btn-edital disabled">Sem edital</span>
+              <a href="#" class="btn-edital secondary">Material</a>
+              <a href="https://2026gmitajai.fepese.org.br/?go=download&arquivo=2026_002_CP_Itajai_Guarda.pdf&inline=1" target="_blank" class="btn-edital primary">Edital oficial</a>
             </div>
           </div>
         </div>
 
-        <!-- ── EDITAL 3 — Exemplo previsto 2 ── -->
+        <!-- ── EDITAL 3 — Sarandi ── -->
         <div class="edital-card previsto reveal"
              data-status="previsto"
-             data-search="polícia civil paraná pcpr investigador delegado">
+             data-search="sarandi paraná parana guarda municipal gcm gm">
 
           <div class="card-head">
             <div>
-              <span class="card-organ">Polícia Civil do Paraná · PR</span>
-              <div class="card-cargo">Investigador de Polícia</div>
+              <span class="card-organ">Prefeitura Municipal de Sarandi · PR</span>
+              <div class="card-cargo">Guarda Municipal</div>
+            </div>
+            <span class="status-badge badge-previsto">
+              <span class="s-dot"></span> Previsto
+            </span>
+          </div>
+
+          <div class="card-data">
+            <div class="data-item">
+              <span class="data-label">Banca</span>
+              <span class="data-value">A definir</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Vagas</span>
+              <span class="data-value">20 vagas imediatas</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Salário</span>
+              <span class="data-value highlight">R$ 4.092,05</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Nível</span>
+              <span class="data-value">Médio / CNH AB</span>
+            </div>
+          </div>
+
+          <div class="card-dates">
+            <span class="card-dates-title">// Datas-chave</span>
+            <div class="date-row">
+              <span class="date-event">Publicação do edital</span>
+              <span class="date-val">Anunciado</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Inscrições</span>
+              <span class="date-val">A definir</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Prova objetiva</span>
+              <span class="date-val">A definir</span>
+            </div>
+            <div class="deadline-bar">
+              <div class="deadline-fill" style="width:40%"></div>
+            </div>
+          </div>
+
+          <div class="card-notes">
+            Edital iminente. Fique atento aos comunicados oficiais.
+          </div>
+
+          <div class="card-foot">
+            <div class="card-local">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Sarandi, PR
+            </div>
+            <div class="card-actions">
+              <a href="#" class="btn-edital disabled">Material</a>
+              <a href="#" target="_blank" class="btn-edital disabled">Edital oficial</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── EDITAL 3 — Exemplo previsto ── -->
+        <div class="edital-card previsto reveal"
+             data-status="previsto"
+             data-search="paraná pmpr policia militar pm quadro">
+
+          <div class="card-head">
+            <div>
+              <span class="card-organ">Polícia Militar do Paraná · PR</span>
+              <div class="card-cargo">Soldado Polícia Militar</div>
             </div>
             <span class="status-badge badge-previsto">
               <span class="s-dot"></span> Previsto
@@ -333,7 +408,7 @@
             </div>
             <div class="data-item">
               <span class="data-label">Salário</span>
-              <span class="data-value highlight">A confirmar</span>
+              <span class="data-value highlight">R$ 6.101,87 | R$ 14.566,35</span>
             </div>
             <div class="data-item">
               <span class="data-label">Nível</span>
@@ -345,14 +420,85 @@
             <span class="card-dates-title">// Previsão</span>
             <div class="date-row">
               <span class="date-event">Previsão de edital</span>
-              <span class="date-val">2026 / 2027</span>
+              <span class="date-val">2026</span>
             </div>
             <div class="date-row">
-              <span class="date-event">Inscrições (est.)</span>
+              <span class="date-event">Inscrições</span>
               <span class="date-val">A definir</span>
             </div>
             <div class="date-row">
-              <span class="date-event">Prova (est.)</span>
+              <span class="date-event">Prova Objetiva</span>
+              <span class="date-val">A definir</span>
+            </div>
+            <div class="deadline-bar">
+              <div class="deadline-fill warn" style="width:15%"></div>
+            </div>
+          </div>
+
+          <div class="card-notes">
+            <em>Aguardando confirmação oficial.</em>
+          </div>
+
+          <div class="card-foot">
+            <div class="card-local">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Paraná, PR
+            </div>
+            <div class="card-actions">
+              <span class="btn-edital disabled">Material</span>
+              <span class="btn-edital disabled">Edital Oficial</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── EDITAL 4 — Exemplo previsto 2 ── -->
+        <div class="edital-card previsto reveal"
+             data-status="previsto"
+             data-search="polícia civil paraná pcpr investigador delegado">
+
+          <div class="card-head">
+            <div>
+              <span class="card-organ">Polícia Civil do Paraná · PR</span>
+              <div class="card-cargo">Agente de Polícia | Papiloscopista | Delegado</div>
+            </div>
+            <span class="status-badge badge-previsto">
+              <span class="s-dot"></span> Previsto
+            </span>
+          </div>
+
+          <div class="card-data">
+            <div class="data-item">
+              <span class="data-label">Banca</span>
+              <span class="data-value">FGV</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Vagas</span>
+              <span class="data-value">CR</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Salário</span>
+              <span class="data-value highlight">R$ 7.818,45 a R$ 24.247,12</span>
+            </div>
+            <div class="data-item">
+              <span class="data-label">Nível</span>
+              <span class="data-value">Superior / CNH B</span>
+            </div>
+          </div>
+
+          <div class="card-dates">
+            <span class="card-dates-title">// Previsão</span>
+            <div class="date-row">
+              <span class="date-event">Previsão de edital</span>
+              <span class="date-val">2026 / 2027</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Inscrições</span>
+              <span class="date-val">A definir</span>
+            </div>
+            <div class="date-row">
+              <span class="date-event">Prova Objetiva</span>
               <span class="date-val">A definir</span>
             </div>
             <div class="deadline-bar">
@@ -374,12 +520,12 @@
             </div>
             <div class="card-actions">
               <span class="btn-edital disabled">Material</span>
-              <span class="btn-edital disabled">Sem edital</span>
+              <span class="btn-edital disabled">Edital Oficial</span>
             </div>
           </div>
         </div>
 
-        <!-- ── EDITAL 4 — Exemplo encerrado ── -->
+        <!-- ── EDITAL 5 — Exemplo encerrado ── -->
         <div class="edital-card encerrado reveal"
              data-status="encerrado"
              data-search="polícia rodoviária federal prf agente federal">
@@ -575,16 +721,18 @@
     /* ── Contadores de status ── */
     function updateCounters() {
       const all = document.querySelectorAll('.edital-card');
-      let a = 0, p = 0, e = 0;
+      let a = 0, m = 0, p = 0, e = 0;
       all.forEach(c => {
         const s = c.dataset.status;
         if (s === 'aberto')    a++;
+        if (s === 'andamento') m++;
         if (s === 'previsto')  p++;
         if (s === 'encerrado') e++;
       });
-      document.getElementById('count-aberto').textContent   = a;
-      document.getElementById('count-previsto').textContent  = p;
-      document.getElementById('count-encerrado').textContent = e;
+      document.getElementById('count-aberto').textContent       = a;
+      document.getElementById('count-andamento').textContent    = m;
+      document.getElementById('count-previsto').textContent     = p;
+      document.getElementById('count-encerrado').textContent    = e;
     }
 
     /* ── Filtro ── */
@@ -592,7 +740,7 @@
       document.querySelectorAll('.chip').forEach(c => {
         c.className = 'chip';
       });
-      const map = { todos:'active-all', aberto:'active-aberto', previsto:'active-previsto', encerrado:'active-encerrado' };
+      const map = { todos:'active-all', aberto:'active-aberto', andamento:'active-andamento', previsto:'active-previsto', encerrado:'active-encerrado' };
       btn.classList.add(map[filter]);
       activeFilter = filter;
       applyFilters();

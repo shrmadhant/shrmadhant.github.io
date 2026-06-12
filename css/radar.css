@@ -25,6 +25,12 @@
     background: var(--green-dim);
 }
 
+.meta-pill.andamento {
+    color: var(--blue-hi);
+    border-color: var(--blue);
+    background: var(--blue-dim);
+}
+
 .meta-pill.previsto {
     color: var(--amber-hi);
     border-color: var(--amber);
@@ -44,6 +50,10 @@
 
 .dot-green {
     background: var(--green-hi);
+}
+
+.dot-blue {
+    background: var(--blue-hi);
 }
 
 .dot-amber {
@@ -123,6 +133,12 @@
 .chip.active-aberto {
     background: var(--green);
     border-color: var(--green);
+    color: #fff;
+}
+
+.chip.active-andamento {
+    background: var(--blue);
+    border-color: var(--blue);
     color: #fff;
 }
 
@@ -240,6 +256,10 @@
     background: var(--green);
 }
 
+.edital-card.andamento::before {
+    background: var(--blue);
+}
+
 .edital-card.previsto::before {
     background: var(--amber);
 }
@@ -325,6 +345,12 @@
     background: var(--green-dim);
 }
 
+.badge-andamento {
+    color: var(--blue-hi);
+    border-color: var(--blue);
+    background: var(--blue-dim);
+}
+
 .badge-previsto {
     color: var(--amber-hi);
     border-color: var(--amber);
@@ -338,6 +364,10 @@
 
 .badge-aberto .s-dot {
     background: var(--green-hi);
+}
+
+.badge-andamento .s-dot {
+    background: var(--blue-hi);
 }
 
 .badge-previsto .s-dot {
